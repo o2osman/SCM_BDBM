@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Übungsaufgaben Klausur SCM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Übungsaufgaben im Klausurstil</h1>
+<div class="subtitle">Supply Chain Management &amp; Distribution · HS RheinMain · Bachelor DBM · WiSe 2026/27<br>
+Stil und Umfang wie Teil 1 der Fallstudien · Hilfsmittel: nicht programmierbarer Taschenrechner · Musterlösungen ab Teil III</div>
+
+<div class="box info">
+<h4>So benutzt du diese Sammlung</h4>
+<ul>
+<li><span class="tag pflicht">Pflicht</span> = Verständnis- und Transferfragen (wie die Pflichtaufgaben der Klausur). <span class="tag wahl">Wahl</span> = Rechenaufgaben wie Teil 1 der Fallstudien (DBM-Wahlaufgaben).</li>
+<li>Jedes Thema kommt <b>mindestens dreimal</b> vor: zwei bis fünf Aufgaben in Teil I und noch einmal in einer der Probeklausuren in Teil II.</li>
+<li>Punkte ≈ Minuten. Erst ohne Lösung rechnen, dann mit Teil III vergleichen.</li>
+<li>Alle Zahlen sind neu, damit du nicht die Fallstudien auswendig wiederholst. Die Musterlösungen sind nachgerechnet.</li>
+</ul>
+</div>
+
+<table class="toc">
+<tr><td><b>Teil I – Aufgaben nach Thema</b></td><td></td></tr>
+<tr><td>A Einführung und Grundbegriffe</td><td>A1–A3</td></tr>
+<tr><td>B Wertschöpfung, Make-or-Buy, Strategic Fit</td><td>B1–B3</td></tr>
+<tr><td>C Ziele, Logistikkosten, Nachhaltigkeit</td><td>C1–C3</td></tr>
+<tr><td>D Distributionsstrukturen und -kanäle</td><td>D1–D3</td></tr>
+<tr><td>E Standortplanung I (NWA, AHP, CoG, Weiszfeld, Manhattan)</td><td>E1–E5</td></tr>
+<tr><td>F Standortplanung II (Warehouse Location Problem)</td><td>F1–F2</td></tr>
+<tr><td>G Transportplanung</td><td>G1–G2</td></tr>
+<tr><td>H Kapazitäts- und Lagerbestandspooling</td><td>H1–H4</td></tr>
+<tr><td>I Newsvendor-Modell</td><td>I1–I3</td></tr>
+<tr><td>J Bullwhip-Effekt</td><td>J1–J3</td></tr>
+<tr><td>K Lagerplanung und Kommissionierung</td><td>K1–K3</td></tr>
+<tr><td>L Transportmittel und Antriebe</td><td>L1–L5</td></tr>
+<tr><td>M Kürzeste Wege</td><td>M1–M3</td></tr>
+<tr><td>N Tourenplanung</td><td>N1–N4</td></tr>
+<tr><td><b>Teil II – Probeklausuren</b> (je 45 Minuten, 45 Punkte)</td><td>P1 SCM · P2 Distribution</td></tr>
+<tr><td><b>Teil III – Musterlösungen</b></td><td></td></tr>
+</table>
+
+<div class="box">
+<h4>Tabelle der Standardnormalverteilung (Quantile z = Φ<sup>−1</sup>(x))</h4>
+<table>
+<tr><th>x</th><td>0,400</td><td>0,500</td><td>0,571</td><td>0,600</td><td>0,625</td><td>0,667</td><td>0,700</td><td>0,727</td><td>0,750</td><td>0,800</td><td>0,900</td><td>0,950</td><td>0,980</td></tr>
+<tr><th>z</th><td>−0,253</td><td>0,000</td><td>0,180</td><td>0,253</td><td>0,319</td><td>0,431</td><td>0,524</td><td>0,604</td><td>0,674</td><td>0,842</td><td>1,282</td><td>1,645</td><td>2,054</td></tr>
+</table>
+</div>
+
+<!-- ======================================================= -->
+<div class="page-break"></div>
+<h2>Teil I – Aufgaben nach Thema</h2>
+
+<h3>A · Einführung und Grundbegriffe des SCM</h3>
+
+<div class="task"><div class="task-head"><span class="task-id">A1</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">8 Punkte</span></div>
+<p>a) Nennen Sie die drei Flussarten in einer Supply Chain und geben Sie für jede ein Beispiel aus der Belieferung der Supermärkte durch SushiFresh. (3 P)</p>
+<p>b) Grenzen Sie eine fokale von einer polyzentrischen Supply Chain ab und nennen Sie je ein Beispiel. (3 P)</p>
+<p>c) „Wenn jeder Partner seinen eigenen Gewinn maximiert, ist auch der Gewinn der Supply Chain maximal.“ Nehmen Sie Stellung. (2 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">A2</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">8 Punkte</span></div>
+<p>Ein Reiskocher-Hersteller (Stückkosten c = 4 €) verkauft über einen Händler. Die Nachfrage am Markt ist p = 20 − q (p in €, q in 1.000 Stück).</p>
+<p>a) Bestimmen Sie Menge, Preis und Gewinn, wenn Hersteller und Händler als ein Unternehmen entscheiden (integrierte Kette). (3 P)</p>
+<p>b) Der Hersteller setzt den Großhandelspreis w = (a + c)/2, der Händler wählt danach seine gewinnmaximale Menge q = (a − w)/2. Bestimmen Sie w, q, p sowie die Gewinne beider Partner und den Kettengewinn. (4 P)</p>
+<p>c) Um wie viel Prozent sinkt der Kettengewinn? Wie heißt dieser Effekt? (1 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">A3</span><span class="tag pflicht">Pflicht · Transfer</span><span class="tag pts">6 Punkte</span></div>
+<p>Skizzieren Sie stichpunktartig die Supply Chain einer Tafel Nussschokolade: Rohstoffe, Produktionsschritte, Logistikprozesse zwischen den Stufen und ihre räumliche Lage. Handelt es sich eher um eine fokale oder polyzentrische Supply Chain? Wer besetzt die Engpassposition?</p>
+</div>
+
+<h3>B · Wertschöpfung, strategische Fertigung und Strategic Fit</h3>
+
+<div class="task"><div class="task-head"><span class="task-id">B1</span><span class="tag pflicht">Pflicht · Transfer</span><span class="tag pts">7 Punkte</span></div>
+<p>SushiFresh verkauft zwei Produkte:</p>
+<table>
+<tr><th>Merkmal</th><th>Sojasauce 250 ml (Handelsware)</th><th>„Weihnachts-Sushi-Platte“ (nur Dezember)</th></tr>
+<tr><td>Variationskoeffizient Tagesnachfrage</td><td>0,08</td><td>0,60</td></tr>
+<tr><td>Haltbarkeit</td><td>18 Monate</td><td>24 Stunden</td></tr>
+<tr><td>Varianten</td><td>1</td><td>8 (jedes Jahr neue Rezepte)</td></tr>
+<tr><td>Deckungsbeitrag</td><td>0,40 €</td><td>11,00 €</td></tr>
+<tr><td>Lieferzeit-Erwartung</td><td>sofort aus dem Regal</td><td>Vorbestellung bis 2 Tage vorher, Abholung im Markt</td></tr>
+</table>
+<p>a) Ordnen Sie beide Produkte im Spektrum der implizierten Unsicherheit ein und begründen Sie mit mindestens drei Merkmalen. Wie würde Fisher die Produkte bezeichnen? (4 P)</p>
+<p>b) Leiten Sie für beide Produkte die passende Supply-Chain-Strategie ab und nennen Sie je eine konkrete Konsequenz für Lagerbestand und Fertigung. (3 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">B2</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">8 Punkte</span></div>
+<p>SushiFresh überlegt, die Saucen selbst herzustellen (Make) oder zuzukaufen (Buy). Werte in T€/Jahr:</p>
+<table>
+<tr><th></th><th class="r">Umsatz</th><th class="r">Material</th><th class="r">Personal</th><th class="r">Anlagen</th><th class="r">Kasse</th><th class="r">Vorräte</th><th class="r">Forderungen</th></tr>
+<tr><td>Make</td><td class="r">8.000</td><td class="r">3.000</td><td class="r">3.800</td><td class="r">2.600</td><td class="r">300</td><td class="r">1.500</td><td class="r">600</td></tr>
+<tr><td>Buy</td><td class="r">8.000</td><td class="r">4.600</td><td class="r">2.600</td><td class="r">900</td><td class="r">300</td><td class="r">700</td><td class="r">600</td></tr>
+</table>
+<p>a) Berechnen Sie für beide Szenarien Gewinn, Gesamtvermögen, Umsatzrentabilität (ROS), Kapitalumschlag und ROI nach dem DuPont-Schema. (6 P)</p>
+<p>b) Welche Alternative ist finanziell besser, und welche Kennzahl entscheidet? Nennen Sie ein Kriterium, das gegen das rechnerische Ergebnis sprechen könnte. (2 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">B3</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">6 Punkte</span></div>
+<p>a) Erklären Sie den Entkopplungspunkt (CODP) und ordnen Sie Make-to-Stock, Assemble-to-Order und Make-to-Order je ein Beispiel zu. (3 P)</p>
+<p>b) Nennen Sie die fünf strategischen Treiber einer Supply Chain mit je einem Stellhebel. (3 P)</p>
+</div>
+
+<h3>C · Ziele, Zielkonflikte, Logistikkosten und Nachhaltigkeit</h3>
+
+<div class="task"><div class="task-head"><span class="task-id">C1</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">8 Punkte</span></div>
+<p>a) Unterscheiden Sie komplementäre, indifferente und konkurrierende Zielbeziehungen mit je einem Logistikbeispiel. Warum treten echte Zielkonflikte nur auf der Effizienzgrenze auf? (4 P)</p>
+<p>b) Erläutern Sie Suffizienz, Effizienz und Konsistenz an je einem Beispiel aus der Logistik. (3 P)</p>
+<p>c) Worin unterscheidet sich eine zirkuläre von einer reversen Supply Chain? (1 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">C2</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">10 Punkte</span></div>
+<p>SushiFresh lässt 20 t Reis aus einem Seehafen ins 500 km entfernte Lager bringen. Zur Wahl stehen:</p>
+<table>
+<tr><th>Alternative</th><th class="r">Kosten je Sendung</th><th class="r">Emissionsfaktor</th><th class="r">Laufzeit</th></tr>
+<tr><td>Lkw</td><td class="r">1.100 €</td><td class="r">75 g CO₂e/tkm</td><td class="r">1 Tag</td></tr>
+<tr><td>Bahn (kombinierter Verkehr)</td><td class="r">950 €</td><td class="r">25 g CO₂e/tkm</td><td class="r">2 Tage</td></tr>
+<tr><td>Binnenschiff</td><td class="r">800 €</td><td class="r">35 g CO₂e/tkm</td><td class="r">4 Tage</td></tr>
+</table>
+<p>a) Berechnen Sie die Emissionen je Sendung mit E = d · m · f. (3 P)</p>
+<p>b) Welche Alternativen sind Pareto-effizient bezüglich Kosten und Emissionen? Ändert sich das, wenn die Laufzeit als drittes Ziel hinzukommt? (3 P)</p>
+<p>c) Ab welchem CO₂-Preis λ (€/t CO₂e) ist die Bahn günstiger als das Binnenschiff? Welche Alternative wählt SushiFresh bei einem Emissionsbudget von 300 kg je Sendung? (4 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">C3</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">5 Punkte</span></div>
+<p>Die Kosten eines Logistiksystems hängen von der Entscheidungsvariable x ab: K(x) = 2·x² + 500/x.</p>
+<p>a) Bestimmen Sie das kostenminimale x* und K(x*). Prüfen Sie mit x = 4 und x = 6. (3 P)</p>
+<p>b) Nennen Sie für „Anzahl der Lager“ und „Sicherheitsbestand“ jeweils die steigende und die fallende Kostenkomponente. (2 P)</p>
+</div>
+
+<h3>D · Distributionsstrukturen und -kanäle</h3>
+
+<div class="task"><div class="task-head"><span class="task-id">D1</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">6 Punkte</span></div>
+<p>Zehn Morgenlieferungen an einen Markt (Ladenöffnung 6:00 Uhr):</p>
+<table>
+<tr><th>Lieferung</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+<tr><th>Ankunft</th><td>5:30</td><td>5:54</td><td>6:12</td><td>5:48</td><td>6:00</td><td>5:42</td><td>6:24</td><td>5:36</td><td>5:54</td><td>5:57</td></tr>
+<tr><th>bestellt</th><td>60</td><td>55</td><td>70</td><td>65</td><td>60</td><td>58</td><td>62</td><td>70</td><td>66</td><td>60</td></tr>
+<tr><th>geliefert</th><td>60</td><td>55</td><td>68</td><td>65</td><td>60</td><td>58</td><td>62</td><td>70</td><td>60</td><td>60</td></tr>
+</table>
+<p>a) Berechnen Sie Pünktlichkeit (Ankunft ≤ 6:00), Vollständigkeit und OTIF. (3 P)</p>
+<p>b) Ein anderer Lieferant hat 96 % Pünktlichkeit und 90 % Vollständigkeit. Welchen Wert kann OTIF höchstens und mindestens annehmen? Begründen Sie. (3 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">D2</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">8 Punkte</span></div>
+<p>Für die Zahl n der Regionallager gilt (T€/Jahr): K(n) = 40·n + 80·√n + 360/√n.</p>
+<p>a) Ordnen Sie die drei Terme den Kostenkomponenten zu und begründen Sie den Verlauf (√n bzw. 1/√n). (2 P)</p>
+<p>b) Berechnen Sie K(n) für n = 1 bis 4 und bestimmen Sie die kostenminimale Anzahl (√2 ≈ 1,414; √3 ≈ 1,732). (4 P)</p>
+<p>c) Durch Mietlager sinken die Fixkosten auf 20·n. Wie ändert sich das Optimum? Was folgt aus der Form der Kurve für die Praxis? (2 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">D3</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">8 Punkte</span></div>
+<p>a) Erklären Sie Absatz- und Logistikkanal am Beispiel des Streckengeschäfts. (2 P)</p>
+<p>b) Nennen Sie vier Funktionen, die der Handel in einem indirekten Absatzkanal übernimmt. (2 P)</p>
+<p>c) Unter welchen Voraussetzungen ist Cross-Docking einem Lager überlegen? Welches Risiko geht man ein? Erklären Sie den Unterschied zwischen ein- und zweistufigem Cross-Docking. (4 P)</p>
+</div>
+
+<h3>E · Standortplanung I: qualitative und kontinuierliche Verfahren</h3>
+<p>SushiFresh sucht einen Standort für eine Küche. Vier Märkte (Koordinaten in km, Nachfrage in Boxen/Tag):</p>
+<table>
+<tr><th>Markt</th><th class="c">A</th><th class="c">B</th><th class="c">C</th><th class="c">D</th></tr>
+<tr><td>(x, y)</td><td class="c">(1, 1)</td><td class="c">(7, 2)</td><td class="c">(5, 8)</td><td class="c">(2, 6)</td></tr>
+<tr><td>Nachfrage a<sub>j</sub></td><td class="c">300</td><td class="c">150</td><td class="c">100</td><td class="c">450</td></tr>
+</table>
+
+<div class="task"><div class="task-head"><span class="task-id">E1</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">8 Punkte</span></div>
+<p>Paarvergleich der Kriterien Transportnähe (T), Miete (M), Personal (P):</p>
+<table><tr><th></th><th class="c">T</th><th class="c">M</th><th class="c">P</th></tr>
+<tr><th>T</th><td class="c">1</td><td class="c">2</td><td class="c">4</td></tr>
+<tr><th>M</th><td class="c">1/2</td><td class="c">1</td><td class="c">3</td></tr>
+<tr><th>P</th><td class="c">1/4</td><td class="c">1/3</td><td class="c">1</td></tr></table>
+<p>a) Bestimmen Sie die Gewichte näherungsweise (Spalten normieren, Zeilenmittel). (4 P)</p>
+<p>b) Berechnen Sie λ<sub>max</sub>, CI und CR (RI = 0,58). Sind die Urteile konsistent? (4 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">E2</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">5 Punkte</span></div>
+<p>Drei Grundstücke wurden auf einer Skala von 0 bis 10 bewertet: S1 (T 7, M 4, P 8), S2 (T 5, M 9, P 6), S3 (T 9, M 5, P 3).</p>
+<p>a) Berechnen Sie die Nutzwerte mit den Gewichten aus E1 und mit gleichen Gewichten. (4 P)</p>
+<p>b) Welche Schwäche der Nutzwertanalyse zeigt der Vergleich? (1 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">E3</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">10 Punkte</span></div>
+<p>a) Bestimmen Sie den Center of Gravity. (3 P)</p>
+<p>b) Führen Sie vom Schwerpunkt aus eine Iteration des Weiszfeld-Algorithmus durch und vergleichen Sie die gewichtete Gesamtdistanz vorher und nachher. In welche Richtung wandert der Standort, und warum? (7 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">E4</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">6 Punkte</span></div>
+<p>a) Bestimmen Sie den optimalen Standort bei Manhattan-Distanzen mit dem gewichteten Median. (3 P)</p>
+<p>b) Vergleichen Sie die Grundstücke K1 (2, 2), K2 (4, 4) und K3 (3, 6) anhand der gewichteten Manhattan-Distanz. Wie viel Prozent liegt das beste über dem Optimum? (3 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">E5</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">5 Punkte</span></div>
+<p>a) Nennen Sie zwei methodische Schwächen der Nutzwertanalyse. (2 P)</p>
+<p>b) Warum liefert der Weiszfeld-Algorithmus in der Regel eine bessere Lösung als der Center of Gravity, obwohl beide euklidisch rechnen? (2 P)</p>
+<p>c) Ab welchem CR gilt eine AHP-Matrix als inkonsistent? (1 P)</p>
+</div>
+
+<h3>F · Standortplanung II: Warehouse Location Problem</h3>
+
+<div class="task"><div class="task-head"><span class="task-id">F1</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">12 Punkte</span></div>
+<p>Vier mögliche Lager L1–L4 sollen vier Kunden beliefern (unkapazitiert):</p>
+<table>
+<tr><th>Transportkosten [€/Einheit]</th><th class="c">Kunde 1</th><th class="c">Kunde 2</th><th class="c">Kunde 3</th><th class="c">Kunde 4</th><th class="c">Fixkosten [T€/Jahr]</th></tr>
+<tr><td>L1</td><td class="c">0,20</td><td class="c">0,50</td><td class="c">0,40</td><td class="c">0,70</td><td class="c">10</td></tr>
+<tr><td>L2</td><td class="c">0,60</td><td class="c">0,15</td><td class="c">0,50</td><td class="c">0,30</td><td class="c">10</td></tr>
+<tr><td>L3</td><td class="c">0,35</td><td class="c">0,40</td><td class="c">0,10</td><td class="c">0,45</td><td class="c">20</td></tr>
+<tr><td>L4 (zentral)</td><td class="c">0,30</td><td class="c">0,30</td><td class="c">0,30</td><td class="c">0,30</td><td class="c">20</td></tr>
+<tr><td><b>Nachfrage [T Einheiten/Jahr]</b></td><td class="c">80</td><td class="c">60</td><td class="c">50</td><td class="c">40</td><td></td></tr>
+</table>
+<p>a) Berechnen Sie die Transportkostenmatrix (T€/Jahr). (3 P)</p>
+<p>b) Lösen Sie das Problem mit der Add- und der Drop-Heuristik. Dokumentieren Sie jede Iteration. (7 P)</p>
+<p>c) Vergleichen Sie beide Ergebnisse. Warum bleibt die Add-Heuristik hier hängen? (2 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">F2</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">5 Punkte</span></div>
+<p>a) Welche Entscheidung trifft das WLP zusätzlich zum Transportproblem? Nennen Sie beide Variablentypen. (2 P)</p>
+<p>b) Wie viele Kombinationen offener Standorte gibt es bei 10 Kandidaten? Warum setzt man Heuristiken ein? (2 P)</p>
+<p>c) AHP empfiehlt Standort X, das WLP Standort Y. Wie gehen Sie damit um? (1 P)</p>
+</div>
+
+<h3>G · Transportplanung</h3>
+
+<div class="task"><div class="task-head"><span class="task-id">G1</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">12 Punkte</span></div>
+<p>Im Weihnachtsgeschäft beliefern drei Küchen vier Märkte (Kosten in € je 10 Boxen, Mengen in 10 Boxen/Tag). Jede nicht gelieferte Einheit kostet 10 € entgangenen Deckungsbeitrag.</p>
+<table>
+<tr><th></th><th class="c">M1</th><th class="c">M2</th><th class="c">M3</th><th class="c">M4</th><th class="c">Angebot</th></tr>
+<tr><th>K1</th><td class="c">2</td><td class="c">7</td><td class="c">7</td><td class="c">7</td><td class="c">120</td></tr>
+<tr><th>K2</th><td class="c">4</td><td class="c">8</td><td class="c">8</td><td class="c">9</td><td class="c">80</td></tr>
+<tr><th>K3</th><td class="c">8</td><td class="c">3</td><td class="c">6</td><td class="c">8</td><td class="c">100</td></tr>
+<tr><th>Nachfrage</th><td class="c">90</td><td class="c">70</td><td class="c">80</td><td class="c">110</td><td></td></tr>
+</table>
+<p>a) Ist das Problem balanciert? Führen Sie einen Dummy-Knoten ein (letzte Zeile) und begründen Sie seine Kosten. (2 P)</p>
+<p>b) Bestimmen Sie eine Startlösung mit der Nordwestecken-Regel und ihre Kosten. (3 P)</p>
+<p>c) Bestimmen Sie eine Startlösung mit der Vogel'schen Approximationsmethode und ihre Kosten. Bei gleicher Differenz wählen Sie die Zeile/Spalte mit dem kleinsten Kostensatz. (6 P)</p>
+<p>d) Welcher Markt bleibt bei VAM unterversorgt? (1 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">G2</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">5 Punkte</span></div>
+<p>a) Formulieren Sie Zielfunktion und Nebenbedingungen des (balancierten) Transportproblems in Worten oder Formeln. (2 P)</p>
+<p>b) Warum liefert VAM meist bessere Startlösungen als die Nordwestecken-Regel? (2 P)</p>
+<p>c) Nennen Sie eine Annahme des Transportproblems, die für die tägliche Filialbelieferung unrealistisch ist. (1 P)</p>
+</div>
+
+<h3>H · Kapazitäts- und Lagerbestandspooling</h3>
+
+<div class="task"><div class="task-head"><span class="task-id">H1</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">8 Punkte</span></div>
+<p>Zwei Küchen A und B haben je 150 Boxen/Tag Kapazität. Nicht lieferbare Nachfrage geht verloren:</p>
+<table>
+<tr><th>Tag</th><th class="c">Mo</th><th class="c">Di</th><th class="c">Mi</th><th class="c">Do</th><th class="c">Fr</th></tr>
+<tr><td>Nachfrage A</td><td class="c">130</td><td class="c">170</td><td class="c">140</td><td class="c">160</td><td class="c">120</td></tr>
+<tr><td>Nachfrage B</td><td class="c">165</td><td class="c">140</td><td class="c">150</td><td class="c">135</td><td class="c">175</td></tr>
+</table>
+<p>a) Berechnen Sie ohne Pooling für jede Küche Lost Sales, Auslastung und Lieferservicegrad. (5 P)</p>
+<p>b) Beide Küchen beliefern künftig beide Gebiete. Berechnen Sie die drei Kennzahlen erneut und erklären Sie die Wirkung. (3 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">H2</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">9 Punkte</span></div>
+<p>Drei Filialen lagern Lachs. Tagesnachfrage normalverteilt, unabhängig: σ<sub>1</sub> = 50 kg, σ<sub>2</sub> = 40 kg, σ<sub>3</sub> = 30 kg. α = 95 % (z = 1,645).</p>
+<p>a) Berechnen Sie den Sicherheitsbestand dezentral (je Filiale und gesamt) und zentral. Wie hoch ist die Einsparung? Vergleichen Sie mit 1 − 1/√3. (5 P)</p>
+<p>b) Nur Filialen 1 und 2 werden zusammengelegt. Berechnen Sie den gemeinsamen Sicherheitsbestand für ρ = −0,5; 0; 0,5 und vergleichen Sie mit dezentral. Was gilt bei ρ = 1? (4 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">H3</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">4 Punkte</span></div>
+<p>a) Zwei Standorte mit gleichem σ werden gepoolt. Wie viel Prozent Sicherheitsbestand spart man bei ρ = 0, ρ = 0,5 und ρ = −0,5? (2 P)</p>
+<p>b) Wie viel spart man, wenn 4, 9 bzw. 16 gleich große, unabhängige Standorte zentralisiert werden? Was fällt auf? (2 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">H4</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">4 Punkte</span></div>
+<p>a) Nennen Sie zwei Nachteile der Zentralisierung, die in der Sicherheitsbestandsrechnung fehlen. (2 P)</p>
+<p>b) Was ist Chaining, und warum genügt oft eine Kette statt vollständiger Flexibilität? (2 P)</p>
+</div>
+
+<h3>I · Newsvendor-Modell</h3>
+
+<div class="task"><div class="task-head"><span class="task-id">I1</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">8 Punkte</span></div>
+<p>Beim Stadtfest verkauft SushiFresh Sushi-Wraps für 9 €. Herstellkosten 4 €, Restwert am Abend 1,50 €. Nachfrage:</p>
+<table><tr><th>Nachfrage</th><td class="c">100</td><td class="c">150</td><td class="c">200</td><td class="c">250</td></tr>
+<tr><th>Wahrscheinlichkeit</th><td class="c">0,2</td><td class="c">0,3</td><td class="c">0,3</td><td class="c">0,2</td></tr></table>
+<p>a) Bestimmen Sie c<sup>u</sup>, c<sup>o</sup>, das kritische Verhältnis und die optimale Menge. (3 P)</p>
+<p>b) Berechnen Sie den erwarteten Gewinn für 150, 200 und 250 Wraps. (5 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">I2</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">6 Punkte</span></div>
+<p>Die Tagesnachfrage einer Filiale ist normalverteilt (μ = 500, σ = 100). Preis 10 €, Herstellkosten 6 €, kein Restwert.</p>
+<p>a) Bestimmen Sie die optimale Menge und den α-Servicegrad. Warum liegt sie unter μ? (4 P)</p>
+<p>b) Eine Tafel nimmt Restware für 2 € ab. Wie ändert sich die Menge? (2 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">I3</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">5 Punkte</span></div>
+<p>a) Nennen Sie die vier Merkmale eines Newsvendor-Problems. (2 P)</p>
+<p>b) Warum sind c<sup>u</sup> und c<sup>o</sup> Opportunitätskosten? (1 P)</p>
+<p>c) Was hat das kritische Verhältnis mit dem α-Servicegrad zu tun? Nennen Sie eine kritische Annahme des Modells. (2 P)</p>
+</div>
+
+<h3>J · Bullwhip-Effekt</h3>
+
+<div class="task"><div class="task-head"><span class="task-id">J1</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">12 Punkte</span></div>
+<p>Eine Filiale bestellt wöchentlich Nori-Blätter. Wiederbeschaffungszeit L = 2 Wochen, Bestellniveau S<sub>t</sub> = (L + 1)·μ̂<sub>t</sub> = 3·μ̂<sub>t</sub>, Schätzung μ̂<sub>t</sub> = (d<sub>t−1</sub> + d<sub>t</sub>)/2, Bestellung q<sub>t</sub> = d<sub>t</sub> + S<sub>t</sub> − S<sub>t−1</sub>.</p>
+<table><tr><th>Woche t</th><td class="c">1</td><td class="c">2</td><td class="c">3</td><td class="c">4</td><td class="c">5</td><td class="c">6</td><td class="c">7</td><td class="c">8</td></tr>
+<tr><th>Bedarf d<sub>t</sub></th><td class="c">50</td><td class="c">60</td><td class="c">55</td><td class="c">45</td><td class="c">70</td><td class="c">60</td><td class="c">50</td><td class="c">55</td></tr></table>
+<p>a) Berechnen Sie μ̂<sub>t</sub> und S<sub>t</sub> für t = 2 bis 8 und q<sub>t</sub> für t = 3 bis 8. (6 P)</p>
+<p>b) Berechnen Sie für die Wochen 3–8 die Stichprobenvarianzen (Division durch n − 1) von Bedarf und Bestellungen und das Varianzverhältnis. Interpretieren Sie. (6 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">J2</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">4 Punkte</span></div>
+<p>Berechnen Sie die untere Schranke nach Chen et al. für L = 2 und p = 2, 4, 8. Welche Empfehlung leiten Sie ab, und wann ist sie gefährlich? </p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">J3</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">6 Punkte</span></div>
+<p>a) Definieren Sie den Bullwhip-Effekt. (1 P)</p>
+<p>b) Nennen Sie die vier Ursachen nach Lee et al. (1997) und je eine Gegenmaßnahme. (4 P)</p>
+<p>c) Welche Erkenntnis macht das Beer Game erfahrbar? (1 P)</p>
+</div>
+
+<h3>K · Lagerplanung und Kommissionierung</h3>
+
+<div class="task"><div class="task-head"><span class="task-id">K1</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">12 Punkte</span></div>
+<p>Ein Fachbodenlager hat <b>5 Gänge</b> im Abstand von <b>4 m</b>; Gang 1 liegt bei x = 4 m, das Depot vorne bei x = 0. Vorderer Quergang y = 0, hinterer Quergang y = 20 m. Gangbreiten werden vernachlässigt. Auftrag 42:</p>
+<table><tr><th>Position</th><td class="c">1</td><td class="c">2</td><td class="c">3</td><td class="c">4</td><td class="c">5</td></tr>
+<tr><th>Gang</th><td class="c">1</td><td class="c">2</td><td class="c">2</td><td class="c">4</td><td class="c">5</td></tr>
+<tr><th>Tiefe [m]</th><td class="c">15</td><td class="c">3</td><td class="c">17</td><td class="c">8</td><td class="c">2</td></tr></table>
+<p>a) Skizzieren Sie das Lager und berechnen Sie die Weglängen für S-Shape, Return und Largest Gap (erster und letzter Gang mit Picks werden bei Largest Gap ganz durchlaufen). (9 P)</p>
+<p>b) Welche Strategie ist am besten? Begründen Sie mit der Lage der Picks. (3 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">K2</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">8 Punkte</span></div>
+<table><tr><th>Artikel</th><td>B1</td><td>B2</td><td>B3</td><td>B4</td><td>B5</td><td>B6</td><td>B7</td><td>B8</td><td>B9</td><td>B10</td></tr>
+<tr><th>Zugriffe/Woche</th><td>320</td><td>180</td><td>150</td><td>90</td><td>60</td><td>40</td><td>30</td><td>20</td><td>6</td><td>4</td></tr>
+<tr><th>Fächer</th><td>2</td><td>4</td><td>1</td><td>1</td><td>3</td><td>1</td><td>2</td><td>1</td><td>2</td><td>1</td></tr></table>
+<p>a) Bilden Sie ABC-Klassen (A bis 80 %, B bis 95 % der kumulierten Zugriffe). Welchen Anteil an Artikeln und Zugriffen hat die A-Klasse? (4 P)</p>
+<p>b) Berechnen Sie den COI und geben Sie die Reihenfolge der ersten fünf Artikel an. Welcher A-Artikel rutscht nach hinten, und warum? (4 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">K3</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">6 Punkte</span></div>
+<p>a) Nennen Sie die vier Funktionen eines Lagers mit je einem Beispiel. (2 P)</p>
+<p>b) Warum braucht die chaotische Lagerplatzvergabe höchstens so viel Platz wie die feste? (2 P)</p>
+<p>c) Wo platzieren Sie A-Artikel bei Return-Routing, wo bei S-Shape? (2 P)</p>
+</div>
+
+<h3>L · Transportmittel, Antriebe und Transportkosten</h3>
+<p>SushiFresh beschafft einen Kühltransporter. Er fährt an 200 Tagen im Jahr 180 km. Kalkulationszins 5 % auf (A + RW)/2, lineare Abschreibung über 8 Jahre.</p>
+<table>
+<tr><th>Parameter</th><th class="r">Diesel</th><th class="r">Elektro</th></tr>
+<tr><td>Kaufpreis A</td><td class="r">70.000 €</td><td class="r">95.000 €</td></tr>
+<tr><td>Restwert RW nach 8 Jahren</td><td class="r">14.000 €</td><td class="r">19.000 €</td></tr>
+<tr><td>Versicherung und Steuer</td><td class="r">2.600 €/Jahr</td><td class="r">2.200 €/Jahr</td></tr>
+<tr><td>Verbrauch (Sommer)</td><td class="r">22 l/100 km</td><td class="r">40 kWh/100 km</td></tr>
+<tr><td>Energiepreis</td><td class="r">1,75 €/l</td><td class="r">0,28 €/kWh</td></tr>
+<tr><td>Wartung und Reifen</td><td class="r">0,09 €/km</td><td class="r">0,06 €/km</td></tr>
+<tr><td>Nutzbare Batteriekapazität</td><td class="r">–</td><td class="r">85 kWh</td></tr>
+</table>
+
+<div class="task"><div class="task-head"><span class="task-id">L1</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">10 Punkte</span></div>
+<p>a) Berechnen Sie für beide Fahrzeuge Fixkosten pro Jahr, variable Kosten pro km, Gesamtkosten pro Jahr und Kosten pro km. (8 P)</p>
+<p>b) Ab welcher Jahresfahrleistung ist das E-Fahrzeug günstiger? (2 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">L2</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">6 Punkte</span></div>
+<p>Im Winter steigt der Verbrauch des E-Fahrzeugs um 25 %.</p>
+<p>a) Reicht die Batterie im Sommer und im Winter für die Tour? (3 P)</p>
+<p>b) In der Mittagspause kann 30 Minuten mit 22 kW geladen werden. Reicht das im Winter? Nennen Sie zwei weitere Lösungen. (3 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">L3</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">4 Punkte</span></div>
+<p>Berechnen Sie die jährlichen Well-to-Wheel-Emissionen beider Fahrzeuge (Diesel 3,2 kg CO₂e/l; Strom 0,38 kg CO₂e/kWh; 10 % Ladeverluste; Sommerverbrauch).</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">L4</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">3 Punkte</span></div>
+<p>Kombinierter Verkehr kostet 550 € je Sendung für Vor-/Nachlauf und Umschlag plus 0,85 €/km; der reine Lkw 1,35 €/km. Ab welcher Entfernung lohnt sich der kombinierte Verkehr? Wie ändert sich die Grenze, wenn die Umschlagkosten steigen?</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">L5</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">5 Punkte</span></div>
+<p>a) Unterscheiden Sie Verkehrsträger, Verkehrsmittel und Ladeeinheit sowie multimodalen und intermodalen Verkehr. (3 P)</p>
+<p>b) Warum sind auf der letzten Meile die Stopps pro Stunde wichtiger als die Fahrzeugkosten? (1 P)</p>
+<p>c) Warum verteilt die ISO 14083 Emissionen nach der kürzesten realisierbaren Distanz (SFD) und nicht nach der gefahrenen Strecke? (1 P)</p>
+</div>
+
+<h3>M · Kürzeste Wege</h3>
+<p>Straßennetz ab Küche K (ungerichtet, km):</p>
+<table><tr><th>Kante</th><td>K–A</td><td>K–B</td><td>K–C</td><td>A–B</td><td>A–D</td><td>B–C</td><td>B–D</td><td>C–E</td><td>D–E</td><td>D–F</td><td>E–F</td></tr>
+<tr><th>km</th><td class="c">5</td><td class="c">9</td><td class="c">14</td><td class="c">3</td><td class="c">11</td><td class="c">4</td><td class="c">7</td><td class="c">6</td><td class="c">5</td><td class="c">9</td><td class="c">4</td></tr></table>
+
+<div class="task"><div class="task-head"><span class="task-id">M1</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">12 Punkte</span></div>
+<p>a) Zeichnen Sie den Graphen. (2 P)</p>
+<p>b) Bestimmen Sie mit Dijkstra die kürzesten Entfernungen von K zu allen Knoten (Tableau mit Marke/Vorgänger je Iteration). (8 P)</p>
+<p>c) Geben Sie den kürzesten Weg nach F an. (2 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">M2</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">4 Punkte</span></div>
+<p>Die Straße B–D wird gesperrt. Welche Knoten sind betroffen? Muss der Algorithmus komplett neu laufen? Wie viele km fallen im Pendelverkehr pro Tag zusätzlich an?</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">M3</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">4 Punkte</span></div>
+<p>a) Warum ist bei Dijkstra die kleinste vorläufige Marke endgültig, und welche Voraussetzung braucht man dafür? (2 P)</p>
+<p>b) Warum erfüllt eine Distanzmatrix aus kürzesten Wegen immer die Dreiecksungleichung? (1 P)</p>
+<p>c) Nennen Sie eine andere Zielgröße für „kurz“ und eine Situation, in der sie zu einem anderen Weg führt. (1 P)</p>
+</div>
+
+<h3>N · Tourenplanung</h3>
+<p>Kürzeste Entfernungen (km) zwischen Depot D und fünf Filialen:</p>
+<table>
+<tr><th></th><th class="c">D</th><th class="c">1</th><th class="c">2</th><th class="c">3</th><th class="c">4</th><th class="c">5</th></tr>
+<tr><th>D</th><td class="c">–</td><td class="c">10</td><td class="c">12</td><td class="c">14</td><td class="c">9</td><td class="c">7</td></tr>
+<tr><th>1</th><td class="c">10</td><td class="c">–</td><td class="c">21</td><td class="c">17</td><td class="c">14</td><td class="c">14</td></tr>
+<tr><th>2</th><td class="c">12</td><td class="c">21</td><td class="c">–</td><td class="c">20</td><td class="c">16</td><td class="c">13</td></tr>
+<tr><th>3</th><td class="c">14</td><td class="c">17</td><td class="c">20</td><td class="c">–</td><td class="c">5</td><td class="c">8</td></tr>
+<tr><th>4</th><td class="c">9</td><td class="c">14</td><td class="c">16</td><td class="c">5</td><td class="c">–</td><td class="c">3</td></tr>
+<tr><th>5</th><td class="c">7</td><td class="c">14</td><td class="c">13</td><td class="c">8</td><td class="c">3</td><td class="c">–</td></tr>
+</table>
+
+<div class="task"><div class="task-head"><span class="task-id">N1</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">5 Punkte</span></div>
+<p>Bestimmen Sie ab D eine Rundtour mit Nearest Neighbor und ihre Länge. Welche Kante ist typisch für die Schwäche des Verfahrens?</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">N2</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">6 Punkte</span></div>
+<p>Prüfen Sie alle 2-opt-Züge, die die Kante (1, 2) der NN-Tour entfernen. Führen Sie den besten verbessernden Zug aus. Neue Tour und Länge? Ist die Tour lokal optimal?</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">N3</span><span class="tag wahl">Wahl · Rechnen</span><span class="tag pts">12 Punkte</span></div>
+<p>Fahrzeugkapazität 100 Boxen. Bedarf: Filiale 1: 40, 2: 30, 3: 30, 4: 40, 5: 30.</p>
+<p>a) Berechnen Sie alle Savings und sortieren Sie absteigend (bei Gleichstand: kleinere Filialnummer zuerst). (4 P)</p>
+<p>b) Bilden Sie die Touren mit dem parallelen Savings-Verfahren. Zahl der Fahrzeuge, Tourlängen, Ersparnis gegenüber Pendeltouren? (8 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">N4</span><span class="tag pflicht">Pflicht · Verständnis</span><span class="tag pts">5 Punkte</span></div>
+<p>a) Wie viele Rundtouren gibt es bei 5 bzw. 12 Filialen (symmetrisch)? Was folgt daraus? (2 P)</p>
+<p>b) Welche drei Bedingungen müssen erfüllt sein, damit das Savings-Verfahren zwei Touren verbinden darf? (3 P)</p>
+</div>
+
+<!-- ======================================================= -->
+<div class="page-break"></div>
+<h2>Teil II – Probeklausuren</h2>
+
+<h3>P1 · Probeklausur „Supply Chain Management“ (45 Minuten, 45 Punkte)</h3>
+
+<div class="task"><div class="task-head"><span class="task-id">P1.1</span><span class="tag pflicht">Pflicht</span><span class="tag pts">12 Punkte</span></div>
+<p>a) Ein Modelabel verkauft dieselbe Jacke im eigenen Onlineshop mit Same-Day-Lieferung und im Fachhandel mit 3 Wochen Vorbestellung. Erklären Sie an diesem Beispiel den Unterschied zwischen Nachfrageunsicherheit und implizierter Nachfrageunsicherheit. (4 P)</p>
+<p>b) Ordnen Sie ein Unternehmen mit hoher ökologischer Betroffenheit und hoher Ökologieorientierung im Raster des ökologischen Strategic Fit ein. Wie heißen die anderen drei Positionen? (4 P)</p>
+<p>c) Warum kann der Bullwhip-Effekt auftreten, obwohl jede Stufe rational nach einer Order-up-to-Regel bestellt? (4 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">P1.2</span><span class="tag wahl">Wahl</span><span class="tag pts">10 Punkte</span></div>
+<p>Sushi-Burger am Badesee: Preis 6 €, Kosten 2 €, Restwert 0,50 €. Nachfrage 60 / 80 / 100 / 120 mit Wahrscheinlichkeit 0,25 / 0,25 / 0,30 / 0,20.</p>
+<p>a) c<sup>u</sup>, c<sup>o</sup>, CR und optimale Menge. (4 P) &nbsp; b) Erwarteter Gewinn für 80, 100 und 120. (6 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">P1.3</span><span class="tag wahl">Wahl</span><span class="tag pts">9 Punkte</span></div>
+<p>Zwei Lager: σ<sub>1</sub> = 60, σ<sub>2</sub> = 80 Stück/Tag, α = 98 % (z = 2,054).</p>
+<p>a) Sicherheitsbestand dezentral und zentral (ρ = 0), Einsparung in %. (5 P) &nbsp; b) Dasselbe für ρ = 0,3. Interpretation. (4 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">P1.4</span><span class="tag wahl">Wahl</span><span class="tag pts">8 Punkte</span></div>
+<p>Transportkosten (T€/Jahr) und Fixkosten (T€/Jahr):</p>
+<table><tr><th></th><th class="c">Kunde 1</th><th class="c">Kunde 2</th><th class="c">Kunde 3</th><th class="c">Fix</th></tr>
+<tr><th>S1</th><td class="c">12</td><td class="c">30</td><td class="c">24</td><td class="c">15</td></tr>
+<tr><th>S2</th><td class="c">27</td><td class="c">9</td><td class="c">21</td><td class="c">12</td></tr>
+<tr><th>S3</th><td class="c">21</td><td class="c">24</td><td class="c">6</td><td class="c">19</td></tr></table>
+<p>Lösen Sie mit der Add-Heuristik und prüfen Sie per Vollenumeration, ob das Optimum gefunden wurde.</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">P1.5</span><span class="tag wahl">Wahl</span><span class="tag pts">6 Punkte</span></div>
+<p>Märkte: (0, 0) mit 200, (6, 0) mit 100, (3, 6) mit 200 Boxen/Tag. a) Center of Gravity. (3 P) b) Optimum bei Manhattan-Distanzen und seine gewichtete Distanz. (3 P)</p>
+</div>
+
+<h3>P2 · Probeklausur „Distribution“ (45 Minuten, 45 Punkte)</h3>
+
+<div class="task"><div class="task-head"><span class="task-id">P2.1</span><span class="tag pflicht">Pflicht</span><span class="tag pts">12 Punkte</span></div>
+<p>a) Ein Hersteller verkauft über einen Onlinehändler, die Ware wird aber direkt vom Herstellerlager an den Endkunden verschickt. Beschreiben Sie Absatz- und Logistikkanal. (3 P)</p>
+<p>b) Nennen Sie die sechs Komponenten des Lieferservice und je eine Kennzahl. (3 P)</p>
+<p>c) Welche Kostenkomponenten steigen, welche sinken mit der Zahl der Lager? Wie verhält sich die Lieferzeit? (4 P)</p>
+<p>d) Nennen Sie die fünf Schritte der Emissionsberechnung nach ISO 14083 in Stichworten. (2 P)</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">P2.2</span><span class="tag wahl">Wahl</span><span class="tag pts">9 Punkte</span></div>
+<p>Netz ab Zentrallager Z (ungerichtet, km): Z–1: 6, Z–2: 2, 2–1: 3, 2–3: 8, 1–3: 4, 1–4: 9, 3–4: 3, 2–4: 14. Bestimmen Sie mit Dijkstra alle kürzesten Entfernungen ab Z (Tableau) und den Weg nach 4.</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">P2.3</span><span class="tag wahl">Wahl</span><span class="tag pts">10 Punkte</span></div>
+<p>Entfernungen: D–1: 6, D–2: 8, D–3: 9, D–4: 5, 1–2: 4, 1–3: 10, 1–4: 9, 2–3: 6, 2–4: 11, 3–4: 7. Bedarf: 1: 30, 2: 40, 3: 35, 4: 25; Kapazität 80. Lösen Sie mit dem Savings-Verfahren (Savings, Touren, Gesamtlänge, Ersparnis).</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">P2.4</span><span class="tag wahl">Wahl</span><span class="tag pts">8 Punkte</span></div>
+<p>Lager mit 4 Gängen im Abstand von 6 m (Gang 1 bei x = 6 m, Depot bei x = 0), Gänge 12 m tief. Picks: Gang 1 bei 10 m, Gang 2 bei 2 m, Gang 3 bei 3 m und 4 m, Gang 4 bei 11 m. Berechnen Sie S-Shape, Return und Largest Gap und begründen Sie das Ergebnis.</p>
+</div>
+
+<div class="task"><div class="task-head"><span class="task-id">P2.5</span><span class="tag wahl">Wahl</span><span class="tag pts">6 Punkte</span></div>
+<p>a) Diesel: 9.000 €/Jahr fix + 0,30 €/km; E-Fahrzeug: 11.500 €/Jahr fix + 0,15 €/km. Break-even und Entscheidung bei 25.000 km/Jahr. (4 P)</p>
+<p>b) Kombinierter Verkehr: 300 € Umschlag + 0,80 €/km, Lkw 1,20 €/km. Ab welcher Entfernung lohnt der KV? (2 P)</p>
+</div>
+
+<!-- ======================================================= -->
+<div class="page-break"></div>
+<h2>Teil III – Musterlösungen</h2>
+
+<h3>A · Einführung</h3>
+<div class="sol"><span class="task-id">A1</span>
+<p>a) <b>Materialfluss</b>: Reis, Fisch zur Küche, Boxen in die Märkte. <b>Informationsfluss</b>: Bestellungen der Märkte, Abverkaufsdaten, Prognosen. <b>Finanzfluss</b>: Zahlungen der Märkte an SushiFresh, Zahlungen an Lieferanten.</p>
+<p>b) <b>Fokal</b>: ein Unternehmen an der Engpassposition kontrolliert Netzwerk, Standards und Marktzugang (z. B. Automobilindustrie, Apple). <b>Polyzentrisch</b>: verteilte Kompetenzen, Spezialisierung und Kooperation, eher gleich verteilte Marktmacht (z. B. IKEA, Unilever).</p>
+<p>c) Falsch. SCM-Gewinn = Kundenumsatz − Kosten aller Partner. Lokale Optimierung erzeugt Ineffizienzen (z. B. doppelte Marginalisierung, Bullwhip), sodass die Summe der Einzelgewinne in der Regel <b>nicht</b> maximal ist. Nötig sind Koordination und Anreizverträge.</p>
+</div>
+<div class="sol"><span class="task-id">A2</span>
+<p>a) Integriert: max (20 − q − 4)·q → q = (a − c)/2 = <b>8</b>, p = <b>12 €</b>, Gewinn = (a − c)²/4 = 16²/4 = <b>64 T€</b>.</p>
+<p>b) w = (20 + 4)/2 = <b>12 €</b>; q = (20 − 12)/2 = <b>4</b>; p = 20 − 4 = <b>16 €</b>. Händler: (16 − 12)·4 = 16 T€; Hersteller: (12 − 4)·4 = 32 T€; Kette: <b>48 T€</b>.</p>
+<p>c) 48/64 = 0,75 → <b>−25 %</b>. <b>Doppelte Marginalisierung</b>: Beide schlagen ihre Marge auf, die Menge halbiert sich.</p>
+</div>
+<div class="sol"><span class="task-id">A3</span>
+<p>Kakao (Westafrika, Fermentation/Trocknung) → Seefracht → Kakaoverarbeitung (Kakaomasse, -butter; Europa); Haselnüsse (Türkei), Zucker (Rüben, EU), Milchpulver (EU), Verpackung (Folie, Karton) → Lkw zum Schokoladenwerk (Conchieren, Temperieren, Gießen, Verpacken) → Lager des Herstellers → Zentrallager des Handels → Filiale → Kunde. Eher <b>fokal</b>: Hersteller bzw. Handel mit großer Marktmacht steuert Standards und Lieferanten; Engpassposition beim Markenhersteller (Rezeptur, Marke) oder beim Lebensmittelhandel (Regalzugang). Bewertet werden Vollständigkeit und Begründung.</p>
+</div>
+
+<h3>B · Strategic Fit</h3>
+<div class="sol"><span class="task-id">B1</span>
+<p>a) <b>Sojasauce: niedrige implizierte Unsicherheit</b> (VK 0,08, 1 Variante, lange Haltbarkeit, geringe Marge) → <b>funktionales</b> Produkt. <b>Weihnachtsplatte: hohe implizierte Unsicherheit</b> (VK 0,60, 8 neue Varianten, 24 h Haltbarkeit, hohe Marge, Saisonware) → <b>innovatives</b> Produkt. Die Vorbestellung senkt die Unsicherheit etwas, Haltbarkeit und Neuheit bleiben.</p>
+<p>b) Sojasauce: <b>effiziente</b> SC, große Lose, minimale Sicherheitsbestände, volle Ladungen. Weihnachtsplatte: <b>reaktionsfähige</b> SC, Fertigung erst nach Vorbestellung (MTO), Kapazitätsreserve in der Küche, kein Fertigwarenbestand, flexible Zutatenbeschaffung.</p>
+</div>
+<div class="sol"><span class="task-id">B2</span>
+<table>
+<tr><th></th><th class="r">Make</th><th class="r">Buy</th></tr>
+<tr><td>Gewinn = Umsatz − Material − Personal</td><td class="r">1.200</td><td class="r">800</td></tr>
+<tr><td>Gesamtvermögen</td><td class="r">5.000</td><td class="r">2.500</td></tr>
+<tr><td>ROS = Gewinn/Umsatz</td><td class="r">15 %</td><td class="r">10 %</td></tr>
+<tr><td>Kapitalumschlag = Umsatz/Vermögen</td><td class="r">1,6</td><td class="r">3,2</td></tr>
+<tr><td><b>ROI</b></td><td class="r"><b>24 %</b></td><td class="r"><b>32 %</b></td></tr>
+</table>
+<p>b) <b>Buy</b> hat den höheren ROI, obwohl der ROS kleiner ist. Den Ausschlag gibt der doppelt so hohe <b>Kapitalumschlag</b> (weniger Anlagen und Vorräte). Dagegen könnten sprechen: Kernkompetenz (eigene Rezeptur), Abhängigkeit vom Lieferanten, Qualitätskontrolle, längere Wiederbeschaffungszeit.</p>
+</div>
+<div class="sol"><span class="task-id">B3</span>
+<p>a) Der CODP ist der Punkt, ab dem kundenauftragsspezifisch gefertigt wird. Davor läuft es prognosegetrieben (Push), danach auftragsgetrieben (Pull). MTS: Supermarkt, Drogerie. ATO: konfigurierter PC, Auto. MTO: Flugzeug, Gebäude.</p>
+<p>b) <b>Produktion</b> (Technologie, Fertigungstiefe), <b>Logistik</b> (Transportmodus, Sicherheitsbestand), <b>Struktur</b> (Lieferanten, Standorte), <b>Preis</b> (Rabatte, Nachfragesteuerung), <b>Information</b> (Informationsteilung, gemeinsame Prognosen).</p>
+</div>
+
+<h3>C · Ziele, Kosten, Nachhaltigkeit</h3>
+<div class="sol"><span class="task-id">C1</span>
+<p>a) <b>Komplementär</b>: bessere Lieferqualität senkt Reklamations- und Logistikkosten. <b>Indifferent</b>: z. B. Farbe der Ladungsträger und Lieferzeit. <b>Konkurrierend</b>: höherer Servicegrad erhöht Bestandskosten. Liegt eine Alternative <b>innerhalb</b> der Effizienzgrenze, kann man beide Ziele gleichzeitig verbessern. Erst auf der Grenze (Pareto-effizient) geht eine Verbesserung nur noch zulasten eines anderen Ziels.</p>
+<p>b) <b>Suffizienz</b>: weniger Verbrauch (z. B. Lieferfenster bündeln statt Expresslieferung, Reparatur statt Neukauf). <b>Effizienz</b>: gleiche Leistung mit weniger Ressourcen (z. B. bessere Auslastung, Tourenoptimierung). <b>Konsistenz</b>: naturverträgliche Stoffströme (z. B. Ökostrom für E-Lkw, Rezyklat).</p>
+<p>c) Die reverse SC führt Produkte nur zurück (Rücknahme, Entsorgung). Die zirkuläre SC schließt den Kreislauf: Zurückgeführtes Material geht wieder in die Produktion.</p>
+</div>
+<div class="sol"><span class="task-id">C2</span>
+<p>a) d · m = 500 · 20 = 10.000 tkm. Lkw: 10.000 · 75 g = <b>750 kg</b>; Bahn: <b>250 kg</b>; Binnenschiff: <b>350 kg</b>.</p>
+<p>b) Der <b>Lkw wird von der Bahn dominiert</b> (teurer und mehr Emissionen). Pareto-effizient: <b>Bahn und Binnenschiff</b> (Schiff billiger, Bahn sauberer). Mit Laufzeit als drittem Ziel ist der Lkw <b>nicht mehr dominiert</b> (am schnellsten). Dann sind alle drei effizient.</p>
+<p>c) 800 + 0,35·λ = 950 + 0,25·λ → 0,10·λ = 150 → <b>λ = 1.500 €/t</b>. Bei realistischen Preisen (z. B. 100 €/t) bleibt das Schiff günstiger (835 € vs. 975 €). Mit Budget 300 kg ist nur die <b>Bahn</b> zulässig.</p>
+</div>
+<div class="sol"><span class="task-id">C3</span>
+<p>a) x* = (500/(2·2))<sup>1/3</sup> = 125<sup>1/3</sup> = <b>5</b>; K(5) = 50 + 100 = <b>150</b>. K(4) = 32 + 125 = 157; K(6) = 72 + 83,3 = 155,3 → Minimum bestätigt.</p>
+<p>b) Lageranzahl: steigend Fix- und Bestandskosten, fallend Auslieferkosten. Sicherheitsbestand: steigend Bestands-/Lagerkosten, fallend Fehlmengenkosten.</p>
+</div>
+
+<h3>D · Distributionsstrukturen</h3>
+<div class="sol"><span class="task-id">D1</span>
+<p>a) Unpünktlich: Lieferungen 3 (6:12) und 7 (6:24) → Pünktlichkeit <b>80 %</b> (6:00 gilt als pünktlich). Unvollständig: 3 und 9 → Vollständigkeit <b>80 %</b>. OTIF: nur 3, 7 und 9 fallen heraus → <b>70 %</b>.</p>
+<p>b) Höchstens <b>90 %</b> (alle unpünktlichen Lieferungen sind zugleich unvollständig). Mindestens 96 + 90 − 100 = <b>86 %</b> (Fehler überschneiden sich nie). OTIF ist nie größer als der kleinere Einzelwert.</p>
+</div>
+<div class="sol"><span class="task-id">D2</span>
+<p>a) 40·n Lagerfixkosten (linear); 80·√n Bestand (Wurzelgesetz, jedes Lager braucht eigenen Sicherheitsbestand); 360/√n Auslieferung (mittlere Entfernung zum nächsten Lager sinkt mit 1/√n).</p>
+<table><tr><th>n</th><th class="r">40n</th><th class="r">80√n</th><th class="r">360/√n</th><th class="r">K(n)</th><th class="r">K(n) mit 20n</th></tr>
+<tr><td>1</td><td class="r">40</td><td class="r">80,0</td><td class="r">360,0</td><td class="r">480,0</td><td class="r">460,0</td></tr>
+<tr><td>2</td><td class="r">80</td><td class="r">113,1</td><td class="r">254,6</td><td class="r"><b>447,7</b></td><td class="r">407,7</td></tr>
+<tr><td>3</td><td class="r">120</td><td class="r">138,6</td><td class="r">207,8</td><td class="r">466,4</td><td class="r"><b>406,4</b></td></tr>
+<tr><td>4</td><td class="r">160</td><td class="r">160,0</td><td class="r">180,0</td><td class="r">500,0</td><td class="r">420,0</td></tr>
+</table>
+<p>b) Optimal: <b>2 Lager</b> (447,7 T€). c) Mit 20n: <b>3 Lager</b> (406,4 T€), aber nur 1,3 T€ besser als 2 Lager. Das Optimum ist <b>sehr flach</b>. Service- und Risikoargumente (z. B. Lieferzeit) können deshalb den Ausschlag geben.</p>
+</div>
+<div class="sol"><span class="task-id">D3</span>
+<p>a) Absatzkanal = <b>wer</b> verkauft (Eigentum, Preis, Kundenkontakt); Logistikkanal = <b>wie</b> die Ware fließt. Beim Streckengeschäft verkauft der Händler, die Ware geht aber direkt vom Hersteller zum Kunden.</p>
+<p>b) Sortimentsbildung, Mengenausgleich, Lagerhaltung, Finanzierung (Bestands- und Forderungsrisiko), Kundenkontakt.</p>
+<p>c) Überlegen bei hohen, gut planbaren Volumina, kurzer Haltbarkeit (Frische) und guter Informationstechnik (Avis, EDI) sowie zuverlässigen Lieferanten. Risiko: kein Puffer. Verspätet sich ein Lieferant, verzögern sich alle Touren. <b>Einstufig</b> (pre-distribution): Lieferant kommissioniert schon je Empfänger, am Cross-Dock wird nur verteilt. <b>Zweistufig</b> (post-distribution): Lieferant liefert sortenrein, Cross-Dock kommissioniert.</p>
+</div>
+
+<h3>E · Standortplanung I</h3>
+<div class="sol"><span class="task-id">E1</span>
+<p>a) Spaltensummen: T 1,75; M 3,333; P 8.</p>
+<table><tr><th></th><th class="c">T</th><th class="c">M</th><th class="c">P</th><th class="c">Gewicht</th></tr>
+<tr><th>T</th><td class="c">0,571</td><td class="c">0,600</td><td class="c">0,500</td><td class="c"><b>0,557</b></td></tr>
+<tr><th>M</th><td class="c">0,286</td><td class="c">0,300</td><td class="c">0,375</td><td class="c"><b>0,320</b></td></tr>
+<tr><th>P</th><td class="c">0,143</td><td class="c">0,100</td><td class="c">0,125</td><td class="c"><b>0,123</b></td></tr></table>
+<p>b) A·w = (1,688; 0,967; 0,369); Quotienten 3,030; 3,019; 3,006 → λ<sub>max</sub> ≈ <b>3,018</b>. CI = 0,018/2 = <b>0,009</b>; CR = 0,009/0,58 ≈ <b>0,016 &lt; 0,1</b> → konsistent. (Kleine Rundungsabweichungen sind in Ordnung.)</p>
+</div>
+<div class="sol"><span class="task-id">E2</span>
+<table><tr><th></th><th class="c">S1</th><th class="c">S2</th><th class="c">S3</th></tr>
+<tr><td>AHP-Gewichte</td><td class="c">0,557·7 + 0,320·4 + 0,123·8 = 6,16</td><td class="c">6,40</td><td class="c"><b>6,98</b></td></tr>
+<tr><td>gleiche Gewichte</td><td class="c">6,33</td><td class="c"><b>6,67</b></td><td class="c">5,67</td></tr></table>
+<p>b) Mit AHP-Gewichten gewinnt S3, mit gleichen Gewichten S2, und S3 fällt auf den letzten Platz. Das Ergebnis hängt stark von den <b>Gewichten</b> ab, und schlechte Werte (S3: Personal 3) werden <b>kompensiert</b>.</p>
+</div>
+<div class="sol"><span class="task-id">E3</span>
+<p>a) Σa = 1.000. x = (300·1 + 150·7 + 100·5 + 450·2)/1.000 = 2.750/1.000 = <b>2,75</b>; y = (300·1 + 150·2 + 100·8 + 450·6)/1.000 = <b>4,10</b>.</p>
+<table><tr><th></th><th class="c">A</th><th class="c">B</th><th class="c">C</th><th class="c">D</th><th class="c">Summe</th></tr>
+<tr><td>d<sub>j</sub> [km]</td><td class="c">3,560</td><td class="c">4,741</td><td class="c">4,502</td><td class="c">2,043</td><td></td></tr>
+<tr><td>g<sub>j</sub> = a<sub>j</sub>/d<sub>j</sub></td><td class="c">84,27</td><td class="c">31,64</td><td class="c">22,21</td><td class="c">220,30</td><td class="c">358,43</td></tr></table>
+<p>b) x<sup>(1)</sup> = (84,27·1 + 31,64·7 + 22,21·5 + 220,30·2)/358,43 ≈ <b>2,39</b>; y<sup>(1)</sup> = (84,27·1 + 31,64·2 + 22,21·8 + 220,30·6)/358,43 ≈ <b>4,60</b>. Gewichtete Distanz sinkt von ≈ 3.149 auf ≈ <b>3.035</b> Box·km. Der Standort wandert Richtung <b>D</b>: größte Nachfrage und nahe am Schwerpunkt, Weiszfeld gewichtet nahe, große Kunden über a/d besonders stark.</p>
+</div>
+<div class="sol"><span class="task-id">E4</span>
+<p>a) Halbe Nachfrage = 500. x sortiert: A 1 (300), D 2 (kumuliert 750 ≥ 500) → x* = 2. y sortiert: A 1 (300), B 2 (450), D 6 (900 ≥ 500) → y* = 6. Optimum <b>(2, 6)</b> = Lage von D, Distanz 1.800 + 1.350 + 500 + 0 = <b>3.650</b>.</p>
+<p>b) K1 (2, 2): 600 + 750 + 900 + 1.800 = <b>4.050</b>; K2 (4, 4): 4.850; K3 (3, 6): 4.150. Bestes Grundstück K1, 4.050/3.650 − 1 ≈ <b>11 %</b> über dem Optimum.</p>
+</div>
+<div class="sol"><span class="task-id">E5</span>
+<p>a) Subjektive Gewichte und Punkte; Kompensation (schlechte Werte werden ausgeglichen); Skalen werden als kardinal behandelt; unterschiedliche Profile können gleichen Nutzwert haben.</p>
+<p>b) CoG minimiert <b>quadrierte</b> Distanzen (Ausreißer zu stark gewichtet), Weiszfeld minimiert die tatsächlichen gewichteten Distanzen iterativ.</p>
+<p>c) CR ≥ 0,1 gilt als inkonsistent.</p>
+</div>
+
+<h3>F · Warehouse Location Problem</h3>
+<div class="sol"><span class="task-id">F1</span>
+<p>a) Kostensatz × Nachfrage (T€/Jahr):</p>
+<table><tr><th></th><th class="c">1</th><th class="c">2</th><th class="c">3</th><th class="c">4</th><th class="c">Summe</th></tr>
+<tr><th>L1</th><td class="c">16</td><td class="c">30</td><td class="c">20</td><td class="c">28</td><td class="c">94</td></tr>
+<tr><th>L2</th><td class="c">48</td><td class="c">9</td><td class="c">25</td><td class="c">12</td><td class="c">94</td></tr>
+<tr><th>L3</th><td class="c">28</td><td class="c">24</td><td class="c">5</td><td class="c">18</td><td class="c">75</td></tr>
+<tr><th>L4</th><td class="c">24</td><td class="c">18</td><td class="c">15</td><td class="c">12</td><td class="c">69</td></tr></table>
+<p>b) <b>Add</b>: Iteration 1: {L1} 104, {L2} 104, {L3} 95, <b>{L4} 89</b> → L4. Iteration 2: {L4, L1} 91, {L4, L2} 90, {L4, L3} 99 → keine Verbesserung, Stopp. Ergebnis <b>{L4}, 89 T€</b>.</p>
+<p><b>Drop</b>: Start alle = 102. Iteration 1: ohne L1 100, ohne L2 101, ohne L3 92, <b>ohne L4 82</b> → L4 schließen. Iteration 2: {L2, L3} 84, {L1, L3} 93, <b>{L1, L2} 77</b> → L3 schließen. Iteration 3: {L2} 104, {L1} 104 → Stopp. Ergebnis <b>{L1, L2}, 77 T€</b>.</p>
+<p>c) Vollenumeration bestätigt: <b>{L1, L2} mit 77 T€ ist optimal</b>. Die Add-Heuristik öffnet zuerst das zentrale L4 (allein am billigsten). Danach lohnt kein weiteres Lager, weil L4 die Kunden schon „mittelmäßig gut“ versorgt. Die gute Kombination L1 + L2 ohne L4 erreicht Add nie, weil es L4 nicht wieder schließen kann.</p>
+</div>
+<div class="sol"><span class="task-id">F2</span>
+<p>a) Zusätzlich: <b>welche Standorte</b> geöffnet werden. Binäre y<sub>i</sub> (Standort offen ja/nein) und kontinuierliche x<sub>ij</sub> (Menge von i an j).</p>
+<p>b) 2<sup>10</sup> − 1 = <b>1.023</b>. Die Zahl wächst exponentiell. Heuristiken liefern schnell gute, aber nicht garantiert optimale Lösungen (Gap zum Optimum prüfen).</p>
+<p>c) Beide Verfahren kombinieren: z. B. WLP für die Kosten, AHP/NWA für nicht monetäre Kriterien, oder Vorauswahl qualitativ, Endauswahl quantitativ.</p>
+</div>
+
+<h3>G · Transportplanung</h3>
+<div class="sol"><span class="task-id">G1</span>
+<p>a) Angebot 300 &lt; Nachfrage 350 → <b>Dummy-Küche</b> mit 50 Einheiten. Kosten 10 je Einheit = entgangener Deckungsbeitrag (Fehlmenge).</p>
+<p>b) Nordwestecke: K1→M1 90, K1→M2 30, K2→M2 40, K2→M3 40, K3→M3 40, K3→M4 60, Dummy→M4 50. Kosten: 180 + 210 + 320 + 320 + 240 + 480 + 500 = <b>2.250</b>.</p>
+<table><tr><th>Schritt</th><th>größte Differenz</th><th>Zuordnung</th></tr>
+<tr><td>1</td><td>Zeile K1: 7 − 2 = 5</td><td>K1→M1 90 (M1 erledigt)</td></tr>
+<tr><td>2</td><td>Spalte M2: 7 − 3 = 4</td><td>K3→M2 70 (M2 erledigt)</td></tr>
+<tr><td>3</td><td>Zeile K3: 8 − 6 = 2</td><td>K3→M3 30 (K3 erschöpft)</td></tr>
+<tr><td>4</td><td>Spalte M4: 9 − 7 = 2</td><td>K1→M4 30 (K1 erschöpft)</td></tr>
+<tr><td>5</td><td>Spalte M3: 10 − 8 = 2</td><td>K2→M3 50 (M3 erledigt)</td></tr>
+<tr><td>6</td><td>Rest</td><td>K2→M4 30, Dummy→M4 50</td></tr></table>
+<p>c) VAM-Kosten: 180 + 210 + 180 + 210 + 400 + 270 + 500 = <b>1.950</b> (300 weniger als NW; zugleich optimal). d) <b>M4</b> erhält 50 Einheiten weniger.</p>
+</div>
+<div class="sol"><span class="task-id">G2</span>
+<p>a) min Σ<sub>i</sub>Σ<sub>j</sub> c<sub>ij</sub>x<sub>ij</sub>; Σ<sub>j</sub> x<sub>ij</sub> = a<sub>i</sub> (Angebot), Σ<sub>i</sub> x<sub>ij</sub> = b<sub>j</sub> (Nachfrage), x<sub>ij</sub> ≥ 0.</p>
+<p>b) VAM berücksichtigt <b>Opportunitätskosten</b> (Strafe, wenn man nicht die günstigste Zelle nimmt). NW ignoriert die Kosten völlig.</p>
+<p>c) Z. B. lineare Kosten (in der Realität Fahrzeugeinsätze, Touren, Fixkosten je Fahrt) oder direkte Pendelfahrten statt Touren.</p>
+</div>
+
+<h3>H · Pooling</h3>
+<div class="sol"><span class="task-id">H1</span>
+<table><tr><th></th><th class="c">Küche A</th><th class="c">Küche B</th><th class="c">gepoolt</th></tr>
+<tr><td>Nachfrage</td><td class="c">720</td><td class="c">765</td><td class="c">1.485</td></tr>
+<tr><td>geliefert</td><td class="c">690</td><td class="c">725</td><td class="c">1.475</td></tr>
+<tr><td>Lost Sales</td><td class="c">30 (Di 20, Do 10)</td><td class="c">40 (Mo 15, Fr 25)</td><td class="c"><b>10</b> (nur Di: 310 &gt; 300)</td></tr>
+<tr><td>Auslastung</td><td class="c">690/750 = 92,0 %</td><td class="c">725/750 = 96,7 %</td><td class="c">1.475/1.500 = <b>98,3 %</b></td></tr>
+<tr><td>Servicegrad</td><td class="c">95,8 %</td><td class="c">94,8 %</td><td class="c"><b>99,3 %</b></td></tr></table>
+<p>b) Die Spitzen treten an verschiedenen Tagen auf und gleichen sich aus. Ohne zusätzliche Kapazität verbessern sich alle Kennzahlen.</p>
+</div>
+<div class="sol"><span class="task-id">H2</span>
+<p>a) Dezentral: 1,645·50 = 82,3; 1,645·40 = 65,8; 1,645·30 = 49,4 → <b>197,4 kg</b>. Zentral: σ = √(2.500 + 1.600 + 900) = √5.000 = 70,7 → SB = <b>116,3 kg</b>. Einsparung 1 − 116,3/197,4 = <b>41,1 %</b> &lt; 42,3 % (1 − 1/√3), weil die Filialen ungleich groß sind.</p>
+<table><tr><th>ρ</th><th class="c">−0,5</th><th class="c">0</th><th class="c">0,5</th><th class="c">1</th><th class="c">dezentral</th></tr>
+<tr><td>σ = √(50² + 40² + 2ρ·50·40)</td><td class="c">45,8</td><td class="c">64,0</td><td class="c">78,1</td><td class="c">90,0</td><td class="c">—</td></tr>
+<tr><td>SB [kg]</td><td class="c">75,4</td><td class="c">105,3</td><td class="c">128,5</td><td class="c">148,1</td><td class="c">148,1</td></tr></table>
+<p>b) Je höher die Korrelation, desto kleiner die Einsparung. Bei <b>ρ = 1 gibt es keinen Pooling-Vorteil</b>.</p>
+</div>
+<div class="sol"><span class="task-id">H3</span>
+<p>a) 1 − √((1 + ρ)/2): ρ = 0 → <b>29,3 %</b>; ρ = 0,5 → <b>13,4 %</b>; ρ = −0,5 → <b>50 %</b>.</p>
+<p>b) 1 − 1/√n: 4 → <b>50 %</b>, 9 → <b>66,7 %</b>, 16 → <b>75 %</b>. Der Zusatznutzen weiterer Standorte nimmt ab.</p>
+</div>
+<div class="sol"><span class="task-id">H4</span>
+<p>a) Längere Wege und höhere Transportkosten, längere Lieferzeit bzw. weniger Frische, mehr Umschlag (Kühlkette), Ausfallrisiko eines einzigen Standorts.</p>
+<p>b) Chaining: jeder Standort kann zusätzlich einen Nachbarn beliefern, sodass eine geschlossene Kette entsteht. Mit 2n statt n² Verbindungen erreicht man schon einen Großteil des Nutzens vollständiger Flexibilität.</p>
+</div>
+
+<h3>I · Newsvendor</h3>
+<div class="sol"><span class="task-id">I1</span>
+<p>a) c<sup>u</sup> = 9 − 4 = 5; c<sup>o</sup> = 4 − 1,50 = 2,50; CR = 5/7,5 = <b>0,667</b>. F(100) = 0,2; F(150) = 0,5; F(200) = 0,8 ≥ 0,667 → <b>q* = 200</b>.</p>
+<table><tr><th>q \ D</th><th class="c">100 (0,2)</th><th class="c">150 (0,3)</th><th class="c">200 (0,3)</th><th class="c">250 (0,2)</th><th class="c">E[Gewinn]</th></tr>
+<tr><td>150</td><td class="c">375</td><td class="c">750</td><td class="c">750</td><td class="c">750</td><td class="c">675,0 €</td></tr>
+<tr><td>200</td><td class="c">250</td><td class="c">625</td><td class="c">1.000</td><td class="c">1.000</td><td class="c"><b>737,5 €</b></td></tr>
+<tr><td>250</td><td class="c">125</td><td class="c">500</td><td class="c">875</td><td class="c">1.250</td><td class="c">687,5 €</td></tr></table>
+<p class="small">Beispiel q = 200, D = 100: 9·100 + 1,5·100 − 4·200 = 250.</p>
+</div>
+<div class="sol"><span class="task-id">I2</span>
+<p>a) c<sup>u</sup> = 4, c<sup>o</sup> = 6 → CR = <b>0,4</b>, z = −0,253 → q* = 500 − 25,3 ≈ <b>475</b>; α-Servicegrad = <b>40 %</b>. Überbestand ist teurer als Fehlmenge (c<sup>o</sup> &gt; c<sup>u</sup>), deshalb liegt q* unter dem Mittelwert.</p>
+<p>b) c<sup>o</sup> = 6 − 2 = 4 → CR = 0,5 → z = 0 → <b>q* = 500</b>.</p>
+</div>
+<div class="sol"><span class="task-id">I3</span>
+<p>a) Einmalige Mengenentscheidung vor der Nachfrage; unsichere Nachfrage (Verteilung bekannt); keine Nachproduktion in der Periode; Restware verliert an Wert (Restwert &lt; Kosten).</p>
+<p>b) Sie sind entgangener Gewinn bzw. vermeidbarer Verlust je falsch geplanter Einheit, keine tatsächlichen Auszahlungen.</p>
+<p>c) Bei optimalem q* gilt F(q*) = CR, also P(keine Fehlmenge) = CR = α-Servicegrad. Kritische Annahmen: bekannte, stationäre Verteilung; keine Kundenreaktion auf Ausverkauf; linearer Restwert.</p>
+</div>
+
+<h3>J · Bullwhip</h3>
+<div class="sol"><span class="task-id">J1</span>
+<table><tr><th>t</th><th class="c">2</th><th class="c">3</th><th class="c">4</th><th class="c">5</th><th class="c">6</th><th class="c">7</th><th class="c">8</th></tr>
+<tr><td>d<sub>t</sub></td><td class="c">60</td><td class="c">55</td><td class="c">45</td><td class="c">70</td><td class="c">60</td><td class="c">50</td><td class="c">55</td></tr>
+<tr><td>μ̂<sub>t</sub></td><td class="c">55</td><td class="c">57,5</td><td class="c">50</td><td class="c">57,5</td><td class="c">65</td><td class="c">55</td><td class="c">52,5</td></tr>
+<tr><td>S<sub>t</sub></td><td class="c">165</td><td class="c">172,5</td><td class="c">150</td><td class="c">172,5</td><td class="c">195</td><td class="c">165</td><td class="c">157,5</td></tr>
+<tr><td>q<sub>t</sub></td><td class="c">–</td><td class="c">62,5</td><td class="c">22,5</td><td class="c">92,5</td><td class="c">82,5</td><td class="c">20</td><td class="c">47,5</td></tr></table>
+<p class="small">Beispiel t = 5: μ̂ = (45 + 70)/2 = 57,5; S = 172,5; q = 70 + 172,5 − 150 = 92,5.</p>
+<p>b) Bedarf (55, 45, 70, 60, 50, 55): Mittel 55,83; Σ(Abw.)² = 370,8; Var = 370,8/5 = <b>74,2</b>. Bestellungen: Mittel 54,58; Σ(Abw.)² = 4.555,2; Var = <b>911,0</b>. Verhältnis 911,0/74,2 ≈ <b>12,3</b>. Die Bestellungen schwanken über zwölfmal so stark wie der Bedarf. Grund: Jede Bedarfsänderung wirkt doppelt (als Bedarf und als Änderung von S), verstärkt durch den Faktor L + 1 = 3.</p>
+</div>
+<div class="sol"><span class="task-id">J2</span>
+<p>p = 2: 1 + 2 + 2 = <b>5</b>; p = 4: 1 + 1 + 0,5 = <b>2,5</b>; p = 8: 1 + 0,5 + 0,125 = <b>1,625</b>. Längeres Prognosefenster glättet die Schätzung und senkt den Bullwhip. Gefährlich bei Trend oder Saison: Die Prognose reagiert dann zu träge.</p>
+</div>
+<div class="sol"><span class="task-id">J3</span>
+<p>a) Die Varianz der Bestellungen nimmt stromaufwärts zu (Var(q)/Var(d) &gt; 1).</p>
+<p>b) <b>Nachfrageprognosen</b> auf Basis von Bestellungen → Informationsaustausch (POS-Daten), VMI, längeres Prognosefenster. <b>Bestellbündelung</b> → kleinere, regelmäßige Bestellungen, geringere Bestellfixkosten. <b>Preisschwankungen</b> → Dauerniedrigpreise statt Aktionen. <b>Rationierungsspiel</b> → Zuteilung nach historischen Abnahmen, keine Stornos ohne Kosten.</p>
+<p>c) Auch rationale Akteure erzeugen ohne Informationsaustausch starke Schwankungen. Spieler unterschätzen offene Bestellungen (supply line underweighting) und bestellen nach Fehlmengen zu viel.</p>
+</div>
+
+<h3>K · Lager</h3>
+<div class="sol"><span class="task-id">K1</span>
+<p>Gänge mit Picks: 1, 2, 4, 5 (x = 4, 8, 16, 20 m), Gangtiefe 20 m.</p>
+<ul>
+<li><b>S-Shape</b>: 4 Gänge (gerade Anzahl), jeder vollständig: 4 · 20 = 80 m; horizontal 2 · 20 = 40 m → <b>120 m</b>.</li>
+<li><b>Return</b>: 2 · (15 + 17 + 8 + 2) = 84 m; horizontal 40 m → <b>124 m</b>.</li>
+<li><b>Largest Gap</b>: Gang 1 und 5 vollständig (40 m), horizontal 40 m. Gang 2 (Picks 3 und 17): Lücken 3 / 14 / 3, größte Lücke zwischen den Picks → von vorn 2·3 = 6 m, von hinten 2·3 = 6 m. Gang 4 (Pick 8): Lücken 8 vorn / 12 hinten, größte hinten → von vorn 2·8 = 16 m. Summe 40 + 40 + 12 + 16 = <b>108 m</b>.</li>
+</ul>
+<p>b) <b>Largest Gap</b>: Gang 2 hat Picks ganz vorn <b>und</b> ganz hinten. S-Shape und Return müssten ihn ganz (bzw. bis 17 m zurück) laufen, Largest Gap spart die 14-m-Lücke. Return verliert bei tiefen Picks (15, 17 m).</p>
+</div>
+<div class="sol"><span class="task-id">K2</span>
+<p>a) Summe 900. Kumuliert: B1 35,6 %; B2 55,6 %; B3 72,2 %; B4 82,2 %; B5 88,9 %; B6 93,3 %; B7 96,7 %; B8 98,9 %; B9 99,6 %; B10 100 %. <b>A: B1–B3</b>, B: B4–B6, C: B7–B10. A-Klasse: <b>30 % der Artikel, 72,2 % der Zugriffe</b>.</p>
+<p>b) COI = Fächer/Zugriffe: B1 0,0063; B3 0,0067; B4 0,0111; B2 0,0222; B6 0,025; B5 0,050; B8 0,050; B7 0,067; B10 0,25; B9 0,33. Reihenfolge: <b>B1, B3, B4, B2, B6</b>. <b>B2</b> (A-Artikel) rutscht hinter B4, weil er 4 Fächer belegt und damit viele gute Plätze verbrauchen würde.</p>
+</div>
+<div class="sol"><span class="task-id">K3</span>
+<p>a) <b>Ausgleich</b> (Saisonware vorproduzierter Kits), <b>Sicherung</b> (Sicherheitsbestand Reis), <b>Sortimentsbildung</b> (Kundenauftrag aus Einzelartikeln), <b>Veredelung</b> (Kits konfektionieren, verpacken).</p>
+<p>b) Bei fester Vergabe braucht jeder Artikel Platz für seinen <b>Maximalbestand</b>. Bei chaotischer Vergabe reicht Platz für den <b>gemeinsamen</b> Maximalbestand, der wegen zeitversetzter Spitzen kleiner ist. Vorteil gering, wenn alle Bestände gleichzeitig hoch sind.</p>
+<p>c) Return: A-Artikel <b>vorn am Gangkopf</b> (nahe Quergang). S-Shape: A-Artikel <b>gangweise</b> in den depotnahen Gängen, weil jeder betretene Gang ganz durchlaufen wird.</p>
+</div>
+
+<h3>L · Transportmittel</h3>
+<div class="sol"><span class="task-id">L1</span>
+<table><tr><th></th><th class="r">Diesel</th><th class="r">Elektro</th></tr>
+<tr><td>Abschreibung (A − RW)/8</td><td class="r">56.000/8 = 7.000 €</td><td class="r">76.000/8 = 9.500 €</td></tr>
+<tr><td>Zinsen (A + RW)/2 · 5 %</td><td class="r">42.000 · 0,05 = 2.100 €</td><td class="r">57.000 · 0,05 = 2.850 €</td></tr>
+<tr><td>Versicherung, Steuer</td><td class="r">2.600 €</td><td class="r">2.200 €</td></tr>
+<tr><td><b>Fixkosten/Jahr</b></td><td class="r"><b>11.700 €</b></td><td class="r"><b>14.550 €</b></td></tr>
+<tr><td>Energie €/km</td><td class="r">0,22 · 1,75 = 0,385</td><td class="r">0,40 · 0,28 = 0,112</td></tr>
+<tr><td><b>variabel €/km</b></td><td class="r"><b>0,475</b></td><td class="r"><b>0,172</b></td></tr>
+<tr><td>Fahrleistung</td><td class="r">200 · 180 = 36.000 km</td><td class="r">36.000 km</td></tr>
+<tr><td><b>Gesamt/Jahr</b></td><td class="r">11.700 + 17.100 = <b>28.800 €</b></td><td class="r">14.550 + 6.192 = <b>20.742 €</b></td></tr>
+<tr><td><b>€/km</b></td><td class="r"><b>0,80</b></td><td class="r"><b>0,58</b></td></tr></table>
+<p>b) 11.700 + 0,475·L = 14.550 + 0,172·L → L = 2.850/0,303 ≈ <b>9.400 km/Jahr</b>.</p>
+</div>
+<div class="sol"><span class="task-id">L2</span>
+<p>a) Sommer: 180 · 0,40 = 72 kWh ≤ 85 → <b>ja</b> (Reichweite 212 km). Winter: 0,50 kWh/km → 90 kWh &gt; 85 → <b>nein</b> (Reichweite 170 km).</p>
+<p>b) 0,5 h · 22 kW = 11 kWh → 96 kWh ≥ 90 → <b>reicht</b> (knapp, 6 kWh Reserve). Weitere Lösungen: Tour kürzen/aufteilen, Vorkonditionierung an der Ladesäule, größere Batterie, Diesel als Winterreserve.</p>
+</div>
+<div class="sol"><span class="task-id">L3</span>
+<p>Diesel: 36.000 · 0,22 · 3,2 = 25.344 kg ≈ <b>25,3 t</b>. Elektro: 36.000 · 0,40 · 1,1 · 0,38 = 6.019 kg ≈ <b>6,0 t</b>. Ersparnis ≈ 76 %.</p>
+</div>
+<div class="sol"><span class="task-id">L4</span>
+<p>1,35·d = 550 + 0,85·d → d = 550/0,50 = <b>1.100 km</b>. Steigen die Umschlagkosten, steigt die Grenze (KV lohnt erst bei längeren Strecken).</p>
+</div>
+<div class="sol"><span class="task-id">L5</span>
+<p>a) Verkehrsträger = Infrastruktur/Art (Straße, Schiene, Wasser, Luft); Verkehrsmittel = Fahrzeug (Lkw, Zug, Schiff); Ladeeinheit = Behälter (Palette, Container, Wechselbrücke). Multimodal = mehrere Verkehrsträger; intermodal = mehrere Verkehrsträger <b>in derselben Ladeeinheit</b> ohne Umschlag der Ware.</p>
+<p>b) Kosten je Stopp hängen vor allem an der Fahrerzeit; viele kurze Stopps machen die Zeit je Stopp (Parken, Übergabe) zum Kostentreiber.</p>
+<p>c) Damit die Emissionszuordnung nicht von Tourenplanung und Umwegen abhängt und vergleichbar bleibt.</p>
+</div>
+
+<h3>M · Kürzeste Wege</h3>
+<div class="sol"><span class="task-id">M1</span>
+<table><tr><th>Iter.</th><th>markiert</th><th class="c">A</th><th class="c">B</th><th class="c">C</th><th class="c">D</th><th class="c">E</th><th class="c">F</th></tr>
+<tr><td>1</td><td>K (0)</td><td class="c">5/K</td><td class="c">9/K</td><td class="c">14/K</td><td class="c">∞</td><td class="c">∞</td><td class="c">∞</td></tr>
+<tr><td>2</td><td>A (5)</td><td class="c"><b>5/K</b></td><td class="c">8/A</td><td class="c">14/K</td><td class="c">16/A</td><td class="c">∞</td><td class="c">∞</td></tr>
+<tr><td>3</td><td>B (8)</td><td></td><td class="c"><b>8/A</b></td><td class="c">12/B</td><td class="c">15/B</td><td class="c">∞</td><td class="c">∞</td></tr>
+<tr><td>4</td><td>C (12)</td><td></td><td></td><td class="c"><b>12/B</b></td><td class="c">15/B</td><td class="c">18/C</td><td class="c">∞</td></tr>
+<tr><td>5</td><td>D (15)</td><td></td><td></td><td></td><td class="c"><b>15/B</b></td><td class="c">18/C</td><td class="c">24/D</td></tr>
+<tr><td>6</td><td>E (18)</td><td></td><td></td><td></td><td></td><td class="c"><b>18/C</b></td><td class="c">22/E</td></tr>
+<tr><td>7</td><td>F (22)</td><td></td><td></td><td></td><td></td><td></td><td class="c"><b>22/E</b></td></tr></table>
+<p>Entfernungen: A 5, B 8, C 12, D 15, E 18, F 22. Weg nach F: <b>K → A → B → C → E → F</b> (5 + 3 + 4 + 6 + 4 = 22 km).</p>
+</div>
+<div class="sol"><span class="task-id">M2</span>
+<p>Nur <b>D</b> nutzt B–D in seinem kürzesten Weg (Teilbaum unter B–D enthält nur D). Neuer Weg K → A → D = <b>16 km</b> (statt 15). E und F hängen nicht an D und bleiben gleich. Kein kompletter Neulauf nötig. Pendelverkehr: 2 · 1 = <b>2 km/Tag</b> mehr.</p>
+</div>
+<div class="sol"><span class="task-id">M3</span>
+<p>a) Jeder andere Weg müsste über einen Knoten mit größerer oder gleicher Marke laufen und kann wegen <b>nichtnegativer Kantengewichte</b> nicht kürzer werden.</p>
+<p>b) Gäbe es einen kürzeren Umweg über einen dritten Knoten, wäre der direkte Eintrag nicht der kürzeste Weg.</p>
+<p>c) Fahrzeit (Autobahn statt Innenstadt), Kosten (Maut), Emissionen; z. B. kürzere Strecke mit Stau ist langsamer.</p>
+</div>
+
+<h3>N · Tourenplanung</h3>
+<div class="sol"><span class="task-id">N1</span>
+<p>D → 5 (7) → 4 (3) → 3 (5) → 1 (17) → 2 (21) → D (12): <b>D–5–4–3–1–2–D, 65 km</b>. Typische Schwäche: Am Ende bleiben weit entfernte Knoten übrig, teure Kanten wie (1, 2) mit 21 km entstehen.</p>
+</div>
+<div class="sol"><span class="task-id">N2</span>
+<table><tr><th>entfernt</th><th>neu</th><th class="c">alt</th><th class="c">neu</th><th class="c">Ersparnis</th></tr>
+<tr><td>(D,5), (1,2)</td><td>(D,1), (5,2)</td><td class="c">7 + 21 = 28</td><td class="c">10 + 13 = 23</td><td class="c"><b>+5</b></td></tr>
+<tr><td>(5,4), (1,2)</td><td>(5,1), (4,2)</td><td class="c">3 + 21 = 24</td><td class="c">14 + 16 = 30</td><td class="c">−6</td></tr>
+<tr><td>(4,3), (1,2)</td><td>(4,1), (3,2)</td><td class="c">5 + 21 = 26</td><td class="c">14 + 20 = 34</td><td class="c">−8</td></tr></table>
+<p>Erster Zug: Teilstück 5–4–3–1 umkehren → <b>D–1–3–4–5–2–D, 60 km</b>. Lokal optimal, wenn kein 2-opt-Zug mehr positive Ersparnis hat. Das ist hier der Fall, und 60 km ist sogar das globale Optimum.</p>
+</div>
+<div class="sol"><span class="task-id">N3</span>
+<p>a) (3,4) 18; (3,5) 13; (4,5) 13; (1,3) 7; (2,3) 6; (2,5) 6; (1,4) 5; (2,4) 5; (1,5) 3; (1,2) 1.</p>
+<table><tr><th>Saving</th><th>Prüfung</th><th>Ergebnis</th></tr>
+<tr><td>(3,4) 18</td><td>30 + 40 = 70 ≤ 100</td><td>Tour 3–4</td></tr>
+<tr><td>(3,5) 13</td><td>70 + 30 = 100 ≤ 100, 3 ist Randknoten</td><td>Tour 5–3–4</td></tr>
+<tr><td>(4,5) 13</td><td>gleiche Tour</td><td>abgelehnt</td></tr>
+<tr><td>(1,3), (2,3) </td><td>3 ist innerer Knoten</td><td>abgelehnt</td></tr>
+<tr><td>(2,5), (1,4), (2,4), (1,5)</td><td>Kapazität &gt; 100</td><td>abgelehnt</td></tr>
+<tr><td>(1,2) 1</td><td>40 + 30 = 70 ≤ 100</td><td>Tour 1–2</td></tr></table>
+<p>b) <b>Zwei Fahrzeuge</b>: D–5–3–4–D (7 + 8 + 5 + 9 = 29 km) und D–1–2–D (10 + 21 + 12 = 43 km), zusammen <b>72 km</b>. Pendeltouren 2 · (10 + 12 + 14 + 9 + 7) = 104 km → Ersparnis 32 = 18 + 13 + 1.</p>
+</div>
+<div class="sol"><span class="task-id">N4</span>
+<p>a) 5!/2 = <b>60</b>; 12!/2 = <b>239.500.800</b>. Faktorielles Wachstum: Vollenumeration ist schnell unmöglich, in der Praxis Heuristiken oder spezialisierte exakte Verfahren.</p>
+<p>b) i und j liegen in <b>verschiedenen</b> Touren; beide sind <b>Randknoten</b> (direkt mit dem Depot verbunden); die <b>Kapazität</b> (und ggf. Zeit/Reichweite) wird eingehalten.</p>
+</div>
+
+<h3>P1 · Probeklausur SCM</h3>
+<div class="sol"><span class="task-id">P1.1</span>
+<p>a) Die <b>Nachfrageunsicherheit</b> (Marktnachfrage nach der Jacke) ist in beiden Kanälen gleich. Die <b>implizierte</b> Unsicherheit hängt von den Versprechen der jeweiligen SC ab: Same-Day-Lieferung lässt kaum Reaktionszeit → hoch; 3 Wochen Vorbestellung gleicht Schwankungen aus → niedrig.</p>
+<p>b) Hohe Betroffenheit + hohe Orientierung = <b>Ökologieadaption</b>. Weitere: <b>Ökologieresistenz</b> (hohe Betroffenheit, niedrige Orientierung), <b>Ökologieignoranz</b> (niedrig/niedrig), <b>Ökologieoffensive</b> (niedrige Betroffenheit, hohe Orientierung: Ökologie als Differenzierungsmerkmal).</p>
+<p>c) Jede Stufe schätzt μ aus den Bestellungen der Nachfolgerstufe neu und passt S an. Eine Bedarfsänderung wird damit doppelt weitergegeben (Bedarf + ΔS), verstärkt durch (L + 1). Die nächste Stufe sieht die bereits verstärkten Bestellungen als Nachfrage.</p>
+</div>
+<div class="sol"><span class="task-id">P1.2</span>
+<p>a) c<sup>u</sup> = 4, c<sup>o</sup> = 1,50 → CR = 4/5,5 = <b>0,727</b>. F: 0,25; 0,50; 0,80 → <b>q* = 100</b>.</p>
+<p>b) E[G(80)] = <b>292,50 €</b>; E[G(100)] = 0,25·180 + 0,25·290 + 0,5·400 = <b>317,50 €</b>; E[G(120)] = <b>309,50 €</b>. 100 ist bestätigt.</p>
+</div>
+<div class="sol"><span class="task-id">P1.3</span>
+<p>a) Dezentral: 2,054 · (60 + 80) = <b>287,6</b>. Zentral: σ = √(3.600 + 6.400) = 100 → <b>205,4</b>. Einsparung <b>28,6 %</b>.</p>
+<p>b) σ = √(10.000 + 2·0,3·60·80) = √12.880 = 113,5 → SB = <b>233,1</b>; Einsparung nur <b>18,9 %</b>. Positive Korrelation verringert den Ausgleichseffekt.</p>
+</div>
+<div class="sol"><span class="task-id">P1.4</span>
+<p>Add: {S1} 15 + 66 = 81; {S2} 12 + 57 = <b>69</b>; {S3} 19 + 51 = 70 → S2. Dann {S2, S1}: 27 + 12 + 9 + 21 = 69 (keine Verbesserung); {S2, S3}: 31 + 21 + 9 + 6 = <b>67</b> → S3 öffnen. Dann {S1, S2, S3}: 46 + 12 + 9 + 6 = 73 → Stopp. Ergebnis <b>{S2, S3}, 67</b>.</p>
+<p>Enumeration (7 Kombinationen): 81, 69, 70, 69 ({S1,S2}), 76 ({S1,S3}), <b>67</b> ({S2,S3}), 73 → Optimum gefunden.</p>
+</div>
+<div class="sol"><span class="task-id">P1.5</span>
+<p>a) x = (0 + 600 + 600)/500 = <b>2,4</b>; y = (0 + 0 + 1.200)/500 = <b>2,4</b>.</p>
+<p>b) Halbe Nachfrage 250. x sortiert: 0 (200), 3 (400 ≥ 250) → x* = 3. y sortiert: 0 (300 ≥ 250) → y* = 0. Optimum <b>(3, 0)</b>, Distanz 200·3 + 100·3 + 200·6 = <b>2.100</b>.</p>
+</div>
+
+<h3>P2 · Probeklausur Distribution</h3>
+<div class="sol"><span class="task-id">P2.1</span>
+<p>a) Absatzkanal: einstufig indirekt (Hersteller → Onlinehändler → Kunde). Logistikkanal: direkt vom Herstellerlager zum Kunden (Streckengeschäft / Dropshipping). Die beiden Kanäle fallen auseinander.</p>
+<p>b) Lieferzeit (Ø Lieferzeit), Lieferzuverlässigkeit (Termintreue, OTIF), Lieferfähigkeit (α-/β-Servicegrad), Lieferbeschaffenheit (Fehlerquote), Lieferflexibilität (Anteil erfüllter Sonderwünsche), Information (Tracking).</p>
+<p>c) Steigend: Lagerfixkosten, Bestandskosten (√n), Hauptlaufkosten. Sinkend: Auslieferkosten (1/√n). Lieferzeit sinkt.</p>
+<p>d) Transportkette zerlegen; zu TOC/HOC gruppieren; Energieverbrauch bestimmen; Emissionen = Energie × Faktor (WTT, TTW); Intensität je tkm bilden und auf die Sendung verteilen (Masse × SFD).</p>
+</div>
+<div class="sol"><span class="task-id">P2.2</span>
+<table><tr><th>markiert</th><th class="c">1</th><th class="c">2</th><th class="c">3</th><th class="c">4</th></tr>
+<tr><td>Z (0)</td><td class="c">6/Z</td><td class="c">2/Z</td><td class="c">∞</td><td class="c">∞</td></tr>
+<tr><td>2 (2)</td><td class="c">5/2</td><td class="c"><b>2/Z</b></td><td class="c">10/2</td><td class="c">16/2</td></tr>
+<tr><td>1 (5)</td><td class="c"><b>5/2</b></td><td></td><td class="c">9/1</td><td class="c">14/1</td></tr>
+<tr><td>3 (9)</td><td></td><td></td><td class="c"><b>9/1</b></td><td class="c">12/3</td></tr>
+<tr><td>4 (12)</td><td></td><td></td><td></td><td class="c"><b>12/3</b></td></tr></table>
+<p>Weg nach 4: <b>Z → 2 → 1 → 3 → 4</b> (2 + 3 + 4 + 3 = 12 km).</p>
+</div>
+<div class="sol"><span class="task-id">P2.3</span>
+<p>Savings: (2,3) 11; (1,2) 10; (3,4) 7; (1,3) 5; (1,4) 2; (2,4) 2. (2,3): 75 ≤ 80 → Tour 2–3. (1,2): 105 → abgelehnt. (3,4): 100 → abgelehnt. (1,3): 105 → abgelehnt. (1,4): 55 → Tour 1–4. (2,4): Kapazität → abgelehnt.</p>
+<p>Touren D–2–3–D (8 + 6 + 9 = 23) und D–1–4–D (6 + 9 + 5 = 20) → <b>43 km</b>. Pendel 56 km → Ersparnis 13 = 11 + 2.</p>
+</div>
+<div class="sol"><span class="task-id">P2.4</span>
+<p>Gänge 1–4 bei x = 6, 12, 18, 24. S-Shape: 4 · 12 + 2 · 24 = <b>96 m</b>. Return: 2 · (10 + 2 + 4 + 11) + 48 = <b>102 m</b>. Largest Gap: Gang 1 und 4 ganz (24) + 48 horizontal + Gang 2 von vorn 2·2 = 4 + Gang 3 von vorn 2·4 = 8 → <b>84 m</b>. Largest Gap ist am besten: Gang 2 und 3 haben nur Picks vorn, die werden vom vorderen Quergang geholt, die tiefen Picks in Gang 1 und 4 liegen auf dem Weg.</p>
+</div>
+<div class="sol"><span class="task-id">P2.5</span>
+<p>a) 9.000 + 0,30·L = 11.500 + 0,15·L → L ≈ <b>16.700 km</b>. Bei 25.000 km: Diesel 16.500 €, E 15.250 € → <b>E-Fahrzeug</b>.</p>
+<p>b) 1,20·d = 300 + 0,80·d → d = <b>750 km</b>.</p>
+</div>
+
+<p class="small" style="margin-top:14pt">Erstellt auf Basis von README, Folien, Reader und Fallstudien des Repositorys o2osman/SCM_BDBM. Lernhilfe, keine offizielle Unterlage des Lehrstuhls.</p>
+</body>
+</html>

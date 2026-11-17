@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Lehrplan Klausur SCM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Lehrplan zur Klausurvorbereitung</h1>
+<div class="subtitle">Supply Chain Management &amp; Distribution · HS RheinMain · Bachelor DBM · WiSe 2026/27<br>
+Nur klausurrelevante Inhalte · Stand: 17.11.2026 · passend zur Aufgabensammlung <b>„uebungsaufgaben.pdf“</b></div>
+
+<div class="box info">
+<h4>Was laut Kursunterlagen (README des Repos) in die Klausur kommt</h4>
+<ul>
+<li><b>Zwei Klausuren à 45 Minuten</b> (SCM und Distribution) an einem gemeinsamen Termin, zusammen mit dem BBA-Kurs.</li>
+<li><b>Prüfungsrelevant sind die Inhalte der Folien.</b> Der Reader vertieft und erklärt sie.</li>
+<li><b>Pflichtaufgaben:</b> eher <b>Verständnis- und Transferfragen</b> zu Themen, die BBA und DBM gemeinsam haben.</li>
+<li><b>Wahlaufgaben:</b> Du wählst <b>entweder</b> den BBA- <b>oder</b> den DBM-Block (unabhängig vom Studiengang). Die DBM-Wahlaufgaben sind <b>Rechenaufgaben wie Teil 1 der Fallstudien</b>, lösbar mit Stift und Papier.</li>
+<li><b>Hilfsmittel</b> (laut Fallstudien): nicht programmierbarer Taschenrechner. <b>Formeln musst du also auswendig können</b> (Formelliste in Abschnitt 3).</li>
+<li><b>Nicht klausurrelevant:</b> R-Code, die R-Exkurse im Reader und die Gruppenfallstudien (Teil 2 der Fallstudien).</li>
+</ul>
+</div>
+
+<div class="box warn">
+<h4>Annahme: Aufteilung der Themen auf die zwei Klausuren</h4>
+<p>Das README sagt nicht, welche Themen in welche der beiden Klausuren gehören. Ich habe sie nach der Gliederung von Reader und Folien zugeordnet:</p>
+<ul>
+<li><b>Klausur SCM:</b> Grundlagen (Einführung, Strategic Fit, Ziele/Kosten/Nachhaltigkeit), Standortplanung I und II, Pooling, Newsvendor, Bullwhip.</li>
+<li><b>Klausur Distribution:</b> Distributionsstrukturen, Transportplanung, Lagerplanung und Kommissionierung, Transportmittel und Antriebe, Kürzeste Wege, Tourenplanung.</li>
+</ul>
+<p>Falls die Aufteilung anders ist, ändert sich am Plan nichts: <b>alle 14 Themen sind relevant</b>. Frag am besten im nächsten Termin nach.</p>
+</div>
+
+<h2>1. Themenübersicht: was du können musst</h2>
+<p>„Begriffe“ ist der Stoff für die <b>Pflichtaufgaben</b>, „Rechenverfahren“ der Stoff für die <b>Wahlaufgaben</b>. Die letzte Spalte verweist auf die Aufgaben in der Übungs-PDF und auf die passende Fallstudie (Teil 1).</p>
+
+<table class="full">
+<tr><th style="width:15%">Thema</th><th style="width:38%">Begriffe und Konzepte (Pflicht)</th><th style="width:30%">Rechenverfahren (Wahl)</th><th style="width:17%">Übung</th></tr>
+<tr><td><b>A Einführung, Grundbegriffe</b></td>
+<td>SCM-Definitionen; Material-, Informations-, Finanzfluss; dispositive, Finanz-, Güterebene; fokale vs. polyzentrische Supply Chain; SCM-Gewinn vs. Einzelgewinne</td>
+<td>Doppelte Marginalisierung (Kettengewinn −25 %)</td>
+<td>A1–A3<br>FS 1</td></tr>
+<tr><td><b>B Strategic Fit</b></td>
+<td>Wertschöpfungsphasen; Make-or-Buy-Kriterien; Entkopplungspunkt, MTS/MTO/ATO, Push/Pull; (implizierte) Nachfrageunsicherheit; Reaktionsfähigkeit vs. Effizienz; 5 Treiber; Strategic Fit; Fisher (funktional/innovativ); Normstrategien</td>
+<td>DuPont: ROI = ROS × Kapitalumschlag (Make vs. Buy)</td>
+<td>B1–B3<br>FS 1 A1–A2</td></tr>
+<tr><td><b>C Ziele, Logistikkosten, Nachhaltigkeit</b></td>
+<td>6 Zielgrößen; komplementär/indifferent/konkurrierend; Pareto-Effizienz; Tetraeder; Logistikkostenarten und gegenläufige Kosten; Brundtland, Triple Bottom Line; ökologischer Strategic Fit; Suffizienz/Effizienz/Konsistenz; lineare, reverse, zirkuläre SC</td>
+<td>Kostenminimum K(x) = a·x² + b/x; Emissionen E = d·m·f; CO₂-Preis und Emissionsbudget</td>
+<td>C1–C3<br>FS 1 A3</td></tr>
+<tr><td><b>D Distributionsstrukturen</b></td>
+<td>Absatz- vs. Logistikkanal; Streckengeschäft; 6 Lieferservice-Komponenten; Absatzkanäle und Funktionen des Handels; Kanalkonflikt; 4 physische Strukturen; Chopra-Optionen; Cross-Docking</td>
+<td>OTIF und seine Grenzen; Anzahl Lager K(n)</td>
+<td>D1–D3<br>FS 1 A4</td></tr>
+<tr><td><b>E Standortplanung I</b></td>
+<td>Ablauf und Schwächen der Nutzwertanalyse (Kompensation, Gewichte); AHP-Schritte; Konsistenz; CoG vs. Weiszfeld; euklidisch vs. Manhattan</td>
+<td>AHP (Gewichte, λ<sub>max</sub>, CI, CR); NWA; Center of Gravity; 1 Weiszfeld-Iteration; gewichteter Median</td>
+<td>E1–E5<br>FS 2</td></tr>
+<tr><td><b>F Standortplanung II</b></td>
+<td>diskret vs. kontinuierlich; WLP vs. Transportproblem; Variablen x<sub>ij</sub>, y<sub>i</sub>; Heuristik vs. Optimum, Gap; qualitative vs. quantitative Bewertung</td>
+<td>Kostenmatrix; Add- und Drop-Heuristik; Vollenumeration (2<sup>n</sup> − 1)</td>
+<td>F1–F2<br>FS 3 A1–A3</td></tr>
+<tr><td><b>G Transportplanung</b></td>
+<td>Modell (Zielfunktion, Angebots-/Nachfrage-NB); Balance und Dummy (Kosten interpretieren); Eröffnungs- vs. Verbesserungsverfahren; Annahmen</td>
+<td>Nordwestecken-Regel; Vogel'sche Approximation; Kostenvergleich</td>
+<td>G1–G2<br>FS 3 A4–A6</td></tr>
+<tr><td><b>H Pooling</b></td>
+<td>Kapazitäts- und Lagerbestandspooling; Chaining; α-Servicegrad; Sicherheitsbestand; Korrelation; Wurzelgesetz; Nachteile der Zentralisierung</td>
+<td>Lost Sales, Auslastung, Servicegrad; SB dezentral/zentral; Einsparung mit ρ</td>
+<td>H1–H4<br>FS 4</td></tr>
+<tr><td><b>I Newsvendor</b></td>
+<td>4 Merkmale eines Newsvendor-Problems; c<sup>u</sup>, c<sup>o</sup> als Opportunitätskosten; kritisches Verhältnis = α-Servicegrad; Annahmen</td>
+<td>diskret (Verteilungsfunktion, erwarteter Gewinn); normalverteilt q* = μ + z·σ</td>
+<td>I1–I3<br>FS 5</td></tr>
+<tr><td><b>J Bullwhip</b></td>
+<td>Definition; Varianzverhältnis; 4 Ursachen nach Lee et al.; Gegenmaßnahmen (Informationsaustausch, VMI, …); Beer Game</td>
+<td>Order-up-to-Politik mit gleitendem Durchschnitt; Var(q)/Var(d); Chen-Schranke</td>
+<td>J1–J3<br>FS 6</td></tr>
+<tr><td><b>K Lager und Kommissionierung</b></td>
+<td>4 Lagerfunktionen; Reserve-/Kommissionierlager; feste, chaotische, zugriffsorientierte Platzvergabe; Kommissionierverfahren; Sammelkommissionierung</td>
+<td>S-Shape, Return, Largest Gap; ABC-Analyse; COI</td>
+<td>K1–K3<br>FS 7</td></tr>
+<tr><td><b>L Transportmittel und Antriebe</b></td>
+<td>Verkehrsträger/-mittel/Ladeeinheit; multi- vs. intermodal; kombinierter Verkehr; BEV-Parameter; letzte Meile; ISO 14083 (TOC/HOC, WTW, SFD)</td>
+<td>Fix- und variable Kosten, €/km; Break-even; Reichweite; WTW-Emissionen; Break-even kombinierter Verkehr</td>
+<td>L1–L5<br>FS 8</td></tr>
+<tr><td><b>M Kürzeste Wege</b></td>
+<td>Graph, Kante, Gewicht, gerichtet/ungerichtet; Varianten des Problems; warum Dijkstra funktioniert (nichtnegative Gewichte); Distanzmatrix, Dreiecksungleichung; Zeit statt Distanz</td>
+<td>Dijkstra-Tableau; Sperrung einer Kante</td>
+<td>M1–M3<br>FS 9</td></tr>
+<tr><td><b>N Tourenplanung</b></td>
+<td>TSP-Modell; kombinatorische Explosion n!/2; lokale vs. globale Optima; Bedingungen im Savings-Verfahren</td>
+<td>Nearest Neighbor; 2-opt; Savings mit Kapazität</td>
+<td>N1–N4<br>FS 10</td></tr>
+</table>
+
+<div class="page-break"></div>
+<h2>2. Wochenplan bis zur Klausur</h2>
+<p>Der Plan folgt der Terminübersicht der Vorlesung. Jede Woche hat dieselbe Routine:</p>
+<ol>
+<li><b>Vor dem Termin</b> (ca. 2 h): Folien des Themas durcharbeiten, unklare Stellen im Reader nachlesen. Fragen aufschreiben.</li>
+<li><b>Nach dem Termin</b> (ca. 2 h): die Aufgaben des Themas aus der Übungs-PDF <b>ohne Lösung</b> rechnen, danach vergleichen. Fehler in eine Fehlerliste eintragen.</li>
+<li><b>Wiederholung</b> (ca. 1 h): die Aufgaben eines <b>älteren</b> Themas noch einmal rechnen (Spalte „Wiederholen“). So kommt jedes Thema mehrmals dran.</li>
+</ol>
+
+<table class="full">
+<tr><th style="width:15%">Woche</th><th style="width:30%">Neues Thema (Termin)</th><th style="width:22%">Übungs-PDF</th><th style="width:33%">Wiederholen</th></tr>
+<tr><td>17.11.–22.11.</td><td><b>Aufholen:</b> Grundlagen (Einführung, Strategic Fit, Ziele/Kosten), Distributionsstrukturen</td><td>A1–A3, B1–B3, C1–C3, D1–D3</td><td>Fallstudie 1, Teil 1</td></tr>
+<tr><td>23.11.–29.11.</td><td><b>Aufholen:</b> Standortplanung I und II · <b>Termin 6:</b> Transportplanung</td><td>E1–E5, F1–F2, G1–G2</td><td>Fallstudie 2 und 3, Teil 1</td></tr>
+<tr><td>30.11.–06.12.</td><td><b>Termin 7:</b> Pooling</td><td>H1–H4</td><td>B2, D2, E3 (Formeln festigen)</td></tr>
+<tr><td>07.12.–13.12.</td><td><b>Termin 8:</b> Newsvendor</td><td>I1–I3</td><td>F1, G1</td></tr>
+<tr><td>14.12.–20.12.</td><td><b>Termin 9:</b> Bullwhip und Beer Game</td><td>J1–J3</td><td>H1–H3</td></tr>
+<tr><td>21.12.–03.01.</td><td><b>Termin 10:</b> Lager und Kommissionierung · Feiertage: <b>Wiederholungsblock SCM</b></td><td>K1–K3 · <b>Probeklausur SCM (P1)</b> mit 45-Minuten-Uhr</td><td>alle Pflichtaufgaben A–J; Fehlerliste durchgehen</td></tr>
+<tr><td>04.01.–10.01.</td><td><b>Termin 11:</b> Transportmittel und Antriebe</td><td>L1–L5</td><td>I1–I2, J1</td></tr>
+<tr><td>11.01.–17.01.</td><td><b>Termin 12:</b> Kürzeste Wege</td><td>M1–M3</td><td>K1–K2, D1–D2</td></tr>
+<tr><td>18.01.–24.01.</td><td><b>Termin 13:</b> Tourenplanung</td><td>N1–N4 · <b>Probeklausur Distribution (P2)</b> mit Uhr</td><td>L1, G1</td></tr>
+<tr><td>25.01.</td><td><b>Termin 14:</b> Klausurvorbereitung</td><td>offene Fragen aus der Fehlerliste mitbringen</td><td>—</td></tr>
+<tr><td>bis zur Klausur</td><td><b>Endspurt</b></td><td>P1 und P2 erneut unter Zeitdruck; alle Fallstudien Teil 1 (1–10) erneut</td><td>Formelliste täglich einmal aus dem Kopf aufschreiben</td></tr>
+</table>
+
+<div class="box ok">
+<h4>Tipps für die 45 Minuten</h4>
+<ul>
+<li><b>Faustregel: 1 Punkt ≈ 1 Minute.</b> Die Fallstudien geben 25–30 Punkte für 25–30 Minuten.</li>
+<li><b>Rechenwege als Tabelle aufschreiben</b> (Dijkstra-Tableau, Add/Drop-Iterationen, VAM-Schritte). Die Musterlösungen vergeben Punkte für jeden Schritt.</li>
+<li><b>Interpretation nie weglassen.</b> Fast jede Rechenaufgabe hat 1–3 Punkte für „Warum?“ oder „Was bedeutet das?“.</li>
+<li><b>Gleichstand-Regeln lesen</b> (z. B. VAM: kleinster Kostensatz). Sie stehen in der Aufgabenstellung.</li>
+<li><b>Zwischenergebnisse runden</b>, aber konsequent: 2–3 Nachkommastellen reichen.</li>
+</ul>
+</div>
+
+<div class="page-break"></div>
+<h2>3. Formelliste zum Auswendiglernen</h2>
+<p class="small">Da nur ein Taschenrechner erlaubt ist, musst du diese Formeln kennen. Schreib die Liste einmal pro Woche aus dem Kopf auf und vergleiche.</p>
+
+<div class="cols">
+<div>
+<h4>Grundlagen und Strategie</h4>
+<ul>
+<li>ROI = ROS × Kapitalumschlag = (Gewinn/Umsatz) × (Umsatz/Gesamtvermögen)</li>
+<li>Doppelte Marginalisierung (p = a − q, Kosten c): integriert q = (a − c)/2, Gewinn (a − c)²/4; dezentral w = (a + c)/2, q = (a − c)/4, Kettengewinn 3(a − c)²/16 → <b>−25 %</b></li>
+<li>K(x) = a·x² + b/x → x* = (b/(2a))<sup>1/3</sup></li>
+<li>Emissionen E = d · m · f (km · t · g CO₂/tkm)</li>
+<li>CO₂-Preis: min K + λ·E · Budget: min K unter E ≤ Ē</li>
+</ul>
+<h4>Distributionsstrukturen</h4>
+<ul>
+<li>OTIF ≤ min(Pünktlichkeit, Vollständigkeit); OTIF ≥ P + V − 100 %</li>
+<li>K(n) = f·n + b·√n + h·n + a/√n (Fix, Bestand, Hauptlauf, Auslieferung)</li>
+</ul>
+<h4>Standortplanung</h4>
+<ul>
+<li>AHP: Spalten normieren → Zeilenmittel = Gewichte w; λ<sub>max</sub> = Mittel von (A·w)<sub>i</sub>/w<sub>i</sub>; CI = (λ<sub>max</sub> − n)/(n − 1); CR = CI/RI; konsistent, wenn <b>CR &lt; 0,1</b></li>
+<li>NWA: Nutzwert = Σ w<sub>k</sub> · Punkte<sub>k</sub></li>
+<li>CoG: x = Σ a<sub>j</sub>x<sub>j</sub> / Σ a<sub>j</sub> (analog y)</li>
+<li>Weiszfeld: Gewichte g<sub>j</sub> = a<sub>j</sub>/d<sub>j</sub>; x<sub>neu</sub> = Σ g<sub>j</sub>x<sub>j</sub> / Σ g<sub>j</sub></li>
+<li>Manhattan: x* und y* getrennt als <b>gewichteter Median</b> (kumuliert ≥ halbe Gesamtnachfrage)</li>
+<li>WLP: Kosten = Σ Fixkosten offener Standorte + Σ<sub>Kunden</sub> min Transportkosten; 2<sup>n</sup> − 1 Kombinationen</li>
+</ul>
+<h4>Transportproblem</h4>
+<ul>
+<li>Balanciert, wenn Σ Angebot = Σ Nachfrage; sonst Dummy-Zeile/-Spalte</li>
+<li>VAM: Differenz = zweitkleinste − kleinste Kosten je Zeile/Spalte; größte Differenz wählen, dort günstigste Zelle maximal belegen</li>
+</ul>
+</div>
+<div>
+<h4>Unsicherheit</h4>
+<ul>
+<li>SB = z<sub>α</sub> · σ (z<sub>0,95</sub> = 1,645)</li>
+<li>zentral: σ<sub>Z</sub> = √(σ₁² + σ₂² + 2ρσ₁σ₂); unabhängig: √(Σσ<sub>i</sub>²)</li>
+<li>Einsparung gleiche σ: 1 − √((1 + ρ)/2); n gleiche Standorte: 1 − 1/√n</li>
+<li>Kapazitätspooling: Lost Sales = Σ max(d − C, 0)</li>
+<li>Newsvendor: c<sup>u</sup> = p − c, c<sup>o</sup> = c − v; CR = c<sup>u</sup>/(c<sup>u</sup> + c<sup>o</sup>)</li>
+<li>diskret: kleinstes q mit F(q) ≥ CR · normal: q* = μ + z·σ, z = Φ<sup>−1</sup>(CR); α-Servicegrad = CR</li>
+<li>Gewinn = p·min(q, D) + v·max(q − D, 0) − c·q</li>
+<li>Bullwhip: S<sub>t</sub> = (L + 1)·μ̂<sub>t</sub>; q<sub>t</sub> = d<sub>t</sub> + S<sub>t</sub> − S<sub>t−1</sub>; B = Var(q)/Var(d) (Division durch n − 1)</li>
+<li>Chen et al.: B ≥ 1 + 2L/p + 2L²/p²</li>
+</ul>
+<h4>Lager</h4>
+<ul>
+<li>S-Shape: jeder Gang mit Pick ganz durchlaufen (bei ungerader Anzahl letzter Gang hin und zurück); horizontal 2 · x<sub>letzter Gang</sub></li>
+<li>Return: je Gang 2 × tiefster Pick; Largest Gap: größte Lücke je Gang nicht laufen</li>
+<li>ABC nach kumulierten Zugriffen; COI = Platzbedarf/Zugriffe, <b>aufsteigend</b> vorne</li>
+</ul>
+<h4>Transportmittel</h4>
+<ul>
+<li>AfA = (A − RW)/N; kalk. Zinsen = (A + RW)/2 · i</li>
+<li>variabel = Verbrauch · Energiepreis + Wartung (€/km)</li>
+<li>Break-even: Fix<sub>1</sub> + v<sub>1</sub>·L = Fix<sub>2</sub> + v<sub>2</sub>·L</li>
+<li>Kombinierter Verkehr: d* = Umschlagkosten/(Lkw-Satz − KV-Satz)</li>
+<li>WTW: Diesel ≈ 3,2 kg CO₂e/l; Strom ≈ 0,38 kg CO₂e/kWh (+ Ladeverluste)</li>
+</ul>
+<h4>Wege und Touren</h4>
+<ul>
+<li>Dijkstra: kleinste vorläufige Marke wird endgültig; Markenkorrektur d(v) = min(d(v), d(u) + c<sub>uv</sub>)</li>
+<li>Savings s<sub>ij</sub> = d<sub>0i</sub> + d<sub>0j</sub> − d<sub>ij</sub></li>
+<li>2-opt-Ersparnis = d(a,b) + d(c,d) − d(a,c) − d(b,d)</li>
+<li>Anzahl Rundtouren (symmetrisch, n Kunden): n!/2</li>
+</ul>
+</div>
+</div>
+
+<h2>4. Selbstcheck vor der Klausur</h2>
+<div class="cols">
+<ul class="check">
+<li>Ich kann Absatz- und Logistikkanal an einem Beispiel unterscheiden.</li>
+<li>Ich kann implizierte Unsicherheit begründen und daraus effizient/reaktionsfähig ableiten.</li>
+<li>Ich kann ein AHP mit 3 Kriterien inkl. CR in 8 Minuten rechnen.</li>
+<li>Ich kann Add und Drop sauber als Iterationstabelle dokumentieren.</li>
+<li>Ich kann NW-Ecke und VAM inkl. Dummy durchführen.</li>
+<li>Ich kann Sicherheitsbestände dezentral/zentral mit ρ berechnen.</li>
+<li>Ich kann c<sup>u</sup>, c<sup>o</sup>, CR und q* (diskret und normal) bestimmen.</li>
+</ul>
+<ul class="check">
+<li>Ich kann eine Order-up-to-Tabelle und das Varianzverhältnis rechnen.</li>
+<li>Ich kenne die 4 Bullwhip-Ursachen und je eine Gegenmaßnahme.</li>
+<li>Ich kann S-Shape, Return und Largest Gap für einen Auftrag berechnen.</li>
+<li>Ich kann Fahrzeugkosten pro km und den Break-even bestimmen.</li>
+<li>Ich kann ein Dijkstra-Tableau mit Vorgängern führen.</li>
+<li>Ich kann Savings berechnen und Touren mit Kapazität bilden.</li>
+<li>Ich habe beide Probeklausuren in je 45 Minuten geschafft.</li>
+</ul>
+</div>
+
+<p class="small">Quellen: README, Folien (slides/lectures), Reader (book/chapters) und Fallstudien (case_studies) im Repository o2osman/SCM_BDBM. Erstellt als Lernhilfe, keine offizielle Unterlage des Lehrstuhls.</p>
+
+</body>
+</html>
